@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="poppins_black">
+        <item name="android:fontFamily">@font/poppins_black</item>
+    </style>
+    <style name="poppins_bold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="poppins_extrabold">
+        <item name="android:fontFamily">@font/poppins_extrabold</item>
+    </style>
+    <style name="poppins_medium">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="poppins_regular">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="poppins_semibold">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+</resources>
