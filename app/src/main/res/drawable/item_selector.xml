@@ -7,4 +7,7 @@
     <item
         android:state_selected="false"
         android:color = "@color/old_grey"/>
+    <item
+        android:state_active="true"
+        android:color = "@color/white"/>
 </selector>
