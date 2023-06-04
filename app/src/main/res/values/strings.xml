@@ -2,4 +2,8 @@
     <string name="app_name">MyApplication</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_lanjut">Lanjut</string>
+    <string name="btn_mulai">Mulai Cari</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vivamus eu tempor ex.</string>
 </resources>

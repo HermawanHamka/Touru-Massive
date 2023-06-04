@@ -4,17 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.DestinasiFragment">
+    android:background="@color/grey"
+    tools:context=".fragment_menu.DestinasiFragment">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
         android:text="Destinasi"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:background="@drawable/customborder"
+            android:fontFamily="@font/poppins_regular"
+            android:freezesText="true"
+            android:inputType="none"
+            android:text="Lokasi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,LabelFor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/kawah_putih"
+                android:text="Kawah Putih"
+                android:textSize="24dp"
+                android:gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bali"
+                android:text="Bali"
+                android:textSize="24dp"
+                android:gravity="bottom"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/pulau_komodo"
+                android:text="Kawah Putih"
+                android:textSize="24dp"
+                android:gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/candi_borobudur"
+                android:text="Bali"
+                android:textSize="24dp"
+                android:gravity="bottom"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
