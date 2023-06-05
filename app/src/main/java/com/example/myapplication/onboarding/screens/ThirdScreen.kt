@@ -24,7 +24,7 @@ class ThirdScreen : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         view.findViewById<Button>(R.id.button_mulai).setOnClickListener{
-            findNavController().navigate(R.id.navbarActivity)
+            findNavController().navigate(R.id.loginActivity)
             onBoardingFinished()
         }
 

@@ -14,8 +14,8 @@
             android:id="@+id/action_splashFragment_to_viewPagerFragment"
             app:destination="@id/viewPagerFragment" />
         <action
-            android:id="@+id/action_splashFragment_to_navbarActivity"
-            app:destination="@id/navbarActivity" />
+            android:id="@+id/action_splashFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
@@ -23,12 +23,12 @@
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
-            android:id="@+id/action_viewPagerFragment_to_navbarActivity"
-            app:destination="@id/navbarActivity" />
+            android:id="@+id/action_viewPagerFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
     <activity
-        android:id="@+id/navbarActivity"
-        android:name="com.example.myapplication.NavbarActivity"
-        android:label="activity_navbar"
-        tools:layout="@layout/activity_navbar" />
+        android:id="@+id/loginActivity"
+        android:name="com.example.myapplication.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>
