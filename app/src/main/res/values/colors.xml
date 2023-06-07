@@ -10,4 +10,6 @@
     <color name="blue">#3761ED</color>
     <color name="grey">#EEEEF0</color>
     <color name="old_grey">#525252</color>
+    <color name="success">#00FA19</color>
+    <color name="red">#FF0003</color>
 </resources>
