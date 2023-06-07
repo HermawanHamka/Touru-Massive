@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(pindahDaftar)
         }
         login.setOnClickListener {
-            val pindahHome = Intent(this, HomeFragment::class.java)
+            val pindahHome = Intent(this, NavbarActivity::class.java)
             startActivity(pindahHome)
         }
     }

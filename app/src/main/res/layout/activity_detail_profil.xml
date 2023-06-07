@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".DetailProfilActivity">
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/txtEditProfil"
+            android:layout_width="394dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Edit Profil"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgBackBantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue"
+            android:padding="20dp"
+            android:src="@drawable/left_arrow"
+            app:tint="@color/white" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="415dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/backgorundbiru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="187dp"
+        android:layout_height="217dp"
+        android:src="@drawable/editprofilfoto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="384dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="5dp"
+            android:text="Nama"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/inputext"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/white"
+                android:gravity="left"
+                android:text="Yoru Abdillah" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="384dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginBottom="5dp"
+                android:text="Email"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/inputext"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="346dp">
+
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/white"
+                    android:gravity="left"
+                    android:text="yoruthebest@gmail.com" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="409dp"
+                android:layout_height="384dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Kata Sandi"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/inputext"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="346dp">
+
+                    <EditText
+                        android:layout_width="350dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/white"
+                        android:gravity="left"
+                        android:text="***********" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="409dp"
+                    android:layout_height="384dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="No Ponsel"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="350dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/inputext"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="346dp">
+
+                        <EditText
+                            android:layout_width="350dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:backgroundTint="@color/white"
+                            android:gravity="left"
+                            android:text="08123456789" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

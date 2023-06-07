@@ -4,18 +4,236 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".fragment_menu.ProfileFragment">
 
-
-    <TextView
-        android:id="@+id/textView3"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:layout_marginVertical="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021">
+
+        <ImageView
+            android:id="@+id/imageViewTimKami"
+            android:layout_width="116dp"
+            android:layout_height="116dp"
+            android:backgroundTint="@color/black"
+            android:elevation="5dp"
+            android:src="@drawable/editprofilfoto" />
+
+        <LinearLayout
+            android:layout_width="273dp"
+            android:layout_height="129dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textNamaTim"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Yoru Abdillah"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="yoruthebest@gmail.com"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/textNohp"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginVertical="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="08123456789"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="407dp"
+        android:layout_height="590dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/inputext"
+        android:backgroundTint="@color/grey"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputext"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingTop="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <TextView
+                android:id="@+id/txtEditProfil"
+                android:layout_width="357dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/icon_edit_profil"
+                android:drawableEnd="@drawable/icon_next"
+                android:drawablePadding="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center"
+                android:text="Edit Profil"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputext"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingTop="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <TextView
+                android:id="@+id/txtRiwayatTransaksi"
+                android:layout_width="357dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/icon_riwayat_transaksi"
+                android:drawableEnd="@drawable/icon_next"
+                android:drawablePadding="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center"
+                android:text="Riwayat Transaksi"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputext"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingTop="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <TextView
+                android:id="@+id/txtBantuan"
+                android:layout_width="357dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/icon_bantuan"
+                android:drawableEnd="@drawable/icon_next"
+                android:drawablePadding="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center"
+                android:text="Bantuan"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputext"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingTop="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <TextView
+                android:id="@+id/txtTentangKami"
+                android:layout_width="357dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/icon_tenntang_kami"
+                android:drawableEnd="@drawable/icon_next"
+                android:drawablePadding="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center"
+                android:text="Tentang Kami"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputext"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingTop="5dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="346dp">
+
+            <TextView
+                android:id="@+id/txtKeluar"
+                android:layout_width="357dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/icon_keluar"
+                android:drawableEnd="@drawable/icon_next"
+                android:drawablePadding="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center"
+                android:text="Keluar"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
