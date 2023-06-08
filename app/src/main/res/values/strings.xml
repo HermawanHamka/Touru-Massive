@@ -6,4 +6,34 @@
     <string name="btn_mulai">Mulai Cari</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Vivamus eu tempor ex.</string>
+    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="description">Deskripsi</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+
+    <string-array name="data_name">
+        <item>izul</item>
+        <item>izul</item>
+        <item>izul</item>
+        <item>izul</item>
+
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Rp. 50.000/Hari</item>
+        <item>Rp. 50.000/Hari</item>
+        <item>Rp. 50.000/Hari</item>
+        <item>Rp. 50.000/Hari</item>
+
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+
+
+
+    </integer-array>
 </resources>
