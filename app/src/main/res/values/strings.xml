@@ -13,27 +13,54 @@
 
     <string-array name="data_name">
         <item>izul</item>
-        <item>izul</item>
-        <item>izul</item>
-        <item>izul</item>
+        <item>hermawan</item>
+        <item>dito</item>
+        <item>rama</item>
+        <item>birul</item>
+        <item>akmal</item>
+        <item>veve</item>
+        <item>ardi</item>
+        <item>husain</item>
+        <item>joko</item>
 
     </string-array>
 
     <string-array name="data_description">
+        <item>Rp. 55.000/Hari</item>
+        <item>Rp. 53.000/Hari</item>
+        <item>Rp. 57.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 59.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
         <item>Rp. 50.000/Hari</item>
-        <item>Rp. 50.000/Hari</item>
-        <item>Rp. 50.000/Hari</item>
-        <item>Rp. 50.000/Hari</item>
+        <item>Rp. 55.000/Hari</item>
 
     </string-array>
+    <string-array name="data_rating">
+        <item>4.6</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.1</item>
+        <item>4.6</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.4</item>
+        <item>4.8</item>
+        <item>4.3</item>
 
+    </string-array>
     <integer-array name="data_photo">
         <item>@drawable/bali</item>
         <item>@drawable/bali</item>
         <item>@drawable/bali</item>
         <item>@drawable/bali</item>
-
-
-
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
     </integer-array>
 </resources>

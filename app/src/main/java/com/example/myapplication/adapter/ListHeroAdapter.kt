@@ -1,5 +1,6 @@
 package com.example.myapplication.adapter
 
+import android.media.Rating
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,10 +26,11 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, description, photo) = listHero[position]
+        val (name, description, photo, ratingg ) = listHero[position]
         holder.imgPhoto.setImageResource(photo)
         holder.tvName.text = name
         holder.tvDescription.text = description
+        holder.rating.text = ratingg
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listHero[holder.adapterPosition])
         }
@@ -41,6 +43,7 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
         val imgPhoto: ImageView = itemView.findViewById(R.id.tvGambar)
         val tvName: TextView = itemView.findViewById(R.id.tv_nama)
         val tvDescription: TextView = itemView.findViewById(R.id.harga)
+        val rating : TextView = itemView.findViewById(R.id.rating)
     }
 
     interface OnItemClickCallback {
