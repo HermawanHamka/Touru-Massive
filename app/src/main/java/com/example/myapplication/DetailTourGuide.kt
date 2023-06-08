@@ -39,6 +39,7 @@ class DetailTourGuide : AppCompatActivity() {
         val tvItemRating: TextView = findViewById(R.id.rating)
         val ivItemPhoto: ImageView = findViewById(R.id.pp)
         val tvItemDetailDesc: TextView = findViewById(R.id.detailtour)
+        val tvHarga: TextView = findViewById(R.id.harga)
 
         val name = intent.getStringExtra(EXTRA_NAME)
         val harga = intent.getStringExtra(EXTRA_HARGA)
@@ -49,6 +50,8 @@ class DetailTourGuide : AppCompatActivity() {
         tvItemName.text = name
         tvItemRating.text = rating
         tvItemDetailDesc.text = detail
+        tvHarga.text = harga
+
 
 
 
