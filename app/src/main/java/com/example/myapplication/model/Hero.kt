@@ -10,7 +10,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Hero(
     val name: String,
-    val description: String,
+    val harga: String,
     val photo: Int,
-    val ratingg: String
+    val ratingg: String,
+    val detail : String
 ) : Parcelable

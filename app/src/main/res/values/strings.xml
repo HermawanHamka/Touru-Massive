@@ -25,7 +25,7 @@
 
     </string-array>
 
-    <string-array name="data_description">
+    <string-array name="data_harga">
         <item>Rp. 55.000/Hari</item>
         <item>Rp. 53.000/Hari</item>
         <item>Rp. 57.000/Hari</item>
@@ -51,6 +51,22 @@
         <item>4.3</item>
 
     </string-array>
+
+    <string-array name="data_detail">
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+
+
+    </string-array>
+
     <integer-array name="data_photo">
         <item>@drawable/bali</item>
         <item>@drawable/bali</item>

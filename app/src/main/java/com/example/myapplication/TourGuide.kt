@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,12 +28,13 @@ class TourGuide : AppCompatActivity() {
 
     private fun getListHeroes(): ArrayList<Hero> {
         val dataName = resources.getStringArray(R.array.data_name)
-        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataHarga = resources.getStringArray(R.array.data_harga)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataRating = resources.getStringArray(R.array.data_rating)
+        val detailProduk = resources.getStringArray(R.array.data_detail)
         val listHero = ArrayList<Hero>()
         for (i in dataName.indices) {
-            val hero = Hero(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1), dataRating[i])
+            val hero = Hero(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
             listHero.add(hero)
         }
         return listHero
@@ -45,6 +47,14 @@ class TourGuide : AppCompatActivity() {
         listHeroAdapter.setOnItemClickCallback(object : ListHeroAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Hero) {
                 showSelectedHero(data)
+                val DataIntent = Intent(this@TourGuide, DetailTourGuide::class.java)
+                DataIntent.putExtra(DetailTourGuide.EXTRA_IMAGE, data.photo)
+                DataIntent.putExtra(DetailTourGuide.EXTRA_NAME, data.name)
+                DataIntent.putExtra(DetailTourGuide.EXTRA_HARGA, data.harga)
+                DataIntent.putExtra(DetailTourGuide.EXTRA_DETAIL, data.detail)
+                DataIntent.putExtra(DetailTourGuide.EXTRA_RATING, data.ratingg)
+                startActivity(DataIntent)
+
             }
         })
     }
