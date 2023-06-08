@@ -1,10 +1,12 @@
 package com.example.myapplication.fragment_menu
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myapplication.DetailProfilActivity
 import com.example.myapplication.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -54,6 +56,7 @@ class HomeFragment : Fragment() {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
+
                 }
             }
     }
