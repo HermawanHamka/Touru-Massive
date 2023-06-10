@@ -1,19 +1,18 @@
 package com.example.myapplication.adapter
 
-import android.media.Rating
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.Hero
+import com.example.myapplication.HeroTourguide
 import com.example.myapplication.R
 import java.util.*
 
 
 
-class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
+class ListHeroAdapter(private val listHeroTourguides: ArrayList<HeroTourguide>) : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -26,18 +25,18 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, description, photo, ratingg ) = listHero[position]
+        val (name, description, photo, ratingg ) = listHeroTourguides[position]
         holder.imgPhoto.setImageResource(photo)
         holder.tvName.text = name
         holder.tvDescription.text = description
         holder.rating.text = ratingg
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listHero[holder.adapterPosition])
+            onItemClickCallback.onItemClicked(listHeroTourguides[holder.adapterPosition])
         }
 
     }
 
-    override fun getItemCount(): Int = listHero.size
+    override fun getItemCount(): Int = listHeroTourguides.size
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgPhoto: ImageView = itemView.findViewById(R.id.tvGambar)
@@ -47,6 +46,6 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: Hero)
+        fun onItemClicked(data: HeroTourguide)
     }
 }

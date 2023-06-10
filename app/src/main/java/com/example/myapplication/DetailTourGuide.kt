@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.media.Rating
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -22,18 +21,18 @@ class DetailTourGuide : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_tour_guide)
 
-        fun getListHeroes(): ArrayList<Hero> {
+        fun getListHeroes(): ArrayList<HeroTourguide> {
             val dataName = resources.getStringArray(R.array.data_name)
             val dataHarga = resources.getStringArray(R.array.data_harga)
             val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
             val dataRating = resources.getStringArray(R.array.data_rating)
             val detailProduk = resources.getStringArray(R.array.data_detail)
-            val listHero = ArrayList<Hero>()
+            val listHeroTourguides = ArrayList<HeroTourguide>()
             for (i in dataName.indices) {
-                val hero = Hero(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
-                listHero.add(hero)
+                val heroTourguide = HeroTourguide(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
+                listHeroTourguides.add(heroTourguide)
             }
-            return listHero
+            return listHeroTourguides
         }
         val tvItemName: TextView = findViewById(R.id.nama_tour)
         val tvItemRating: TextView = findViewById(R.id.rating)

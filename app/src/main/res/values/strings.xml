@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApplication</string>
+    <string name="app_name">Touru</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_lanjut">Lanjut</string>
@@ -10,7 +10,10 @@
     <string name="description">Deskripsi</string>
     <string name="list">List</string>
     <string name="grid">Grid</string>
+    <string name="nama_destinasi">Nama Destinasi</string>
 
+
+    //Hero TourGuide
     <string-array name="data_name">
         <item>izul</item>
         <item>hermawan</item>
@@ -79,4 +82,5 @@
         <item>@drawable/bali</item>
         <item>@drawable/bali</item>
     </integer-array>
+
 </resources>
