@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
  */
 
 @Parcelize
-data class Hero(
+data class HeroTourguide(
     val name: String,
     val harga: String,
     val photo: Int,

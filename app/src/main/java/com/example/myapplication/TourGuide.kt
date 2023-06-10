@@ -1,17 +1,19 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R.id.rv_heroes
 import com.example.myapplication.adapter.ListHeroAdapter
+import com.example.myapplication.fragment_menu.HomeFragment
 
 class TourGuide : AppCompatActivity() {
     private lateinit var rvHeroes: RecyclerView
-    private val list = ArrayList<Hero>()
+    private val list = ArrayList<HeroTourguide>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,22 +24,30 @@ class TourGuide : AppCompatActivity() {
 
         list.addAll(getListHeroes())
         showRecyclerList()
+        val backButton: ImageView = findViewById<ImageView>(R.id.kembali)
+        backButton.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("checkbox_status", true)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+
+        }
     }
 
 
 
-    private fun getListHeroes(): ArrayList<Hero> {
+    private fun getListHeroes(): ArrayList<HeroTourguide> {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataHarga = resources.getStringArray(R.array.data_harga)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataRating = resources.getStringArray(R.array.data_rating)
         val detailProduk = resources.getStringArray(R.array.data_detail)
-        val listHero = ArrayList<Hero>()
+        val listHeroTourguides = ArrayList<HeroTourguide>()
         for (i in dataName.indices) {
-            val hero = Hero(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
-            listHero.add(hero)
+            val heroTourguide = HeroTourguide(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
+            listHeroTourguides.add(heroTourguide)
         }
-        return listHero
+        return listHeroTourguides
     }
 
     private fun showRecyclerList() {
@@ -45,7 +55,7 @@ class TourGuide : AppCompatActivity() {
         val listHeroAdapter = ListHeroAdapter(list)
         rvHeroes.adapter = listHeroAdapter
         listHeroAdapter.setOnItemClickCallback(object : ListHeroAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Hero) {
+            override fun onItemClicked(data: HeroTourguide) {
                 showSelectedHero(data)
                 val DataIntent = Intent(this@TourGuide, DetailTourGuide::class.java)
                 DataIntent.putExtra(DetailTourGuide.EXTRA_IMAGE, data.photo)
@@ -59,8 +69,8 @@ class TourGuide : AppCompatActivity() {
         })
     }
 
-    private fun showSelectedHero(hero: Hero) {
-        Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
+    private fun showSelectedHero(heroTourguide: HeroTourguide) {
+        Toast.makeText(this, "Kamu memilih " + heroTourguide.name, Toast.LENGTH_SHORT).show()
     }
 
 
