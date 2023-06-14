@@ -8,15 +8,15 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.adapter.ListHeroAdapter
+import com.example.myapplication.adapter.HomeStayAdapter
 
-class TourGuide : AppCompatActivity() {
+class HomeStay : AppCompatActivity() {
     private lateinit var rvHeroes: RecyclerView
-    private val list = ArrayList<HeroTourguide>()
+    private val list = ArrayList<HeroHomestay>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tour_guide)
+        setContentView(R.layout.activity_home_stay)
 
         rvHeroes = findViewById(R.id.rv_heroes)
         rvHeroes.setHasFixedSize(true)
@@ -35,28 +35,28 @@ class TourGuide : AppCompatActivity() {
 
 
 
-    private fun getListHeroes(): ArrayList<HeroTourguide> {
+    private fun getListHeroes(): ArrayList<HeroHomestay> {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataHarga = resources.getStringArray(R.array.data_harga)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataRating = resources.getStringArray(R.array.data_rating)
         val detailProduk = resources.getStringArray(R.array.data_detail)
-        val listHeroTourguides = ArrayList<HeroTourguide>()
+        val listHeroHomestays = ArrayList<HeroHomestay>()
         for (i in dataName.indices) {
-            val heroTourguide = HeroTourguide(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
-            listHeroTourguides.add(heroTourguide)
+            val heroHomestay = HeroHomestay(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
+            listHeroHomestays.add(heroHomestay)
         }
-        return listHeroTourguides
+        return listHeroHomestays
     }
 
     private fun showRecyclerList() {
         rvHeroes.layoutManager = LinearLayoutManager(this)
-        val listHeroAdapter = ListHeroAdapter(list)
-        rvHeroes.adapter = listHeroAdapter
-        listHeroAdapter.setOnItemClickCallback(object : ListHeroAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: HeroTourguide) {
+        val HomeStayAdapter = HomeStayAdapter(list)
+        rvHeroes.adapter = HomeStayAdapter
+        HomeStayAdapter.setOnItemClickCallback(object : HomeStayAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: HeroHomestay) {
                 showSelectedHero(data)
-                val DataIntent = Intent(this@TourGuide, DetailHomeStay::class.java)
+                val DataIntent = Intent(this@HomeStay, DetailHomeStay::class.java)
                 DataIntent.putExtra(DetailHomeStay.EXTRA_IMAGE, data.photo)
                 DataIntent.putExtra(DetailHomeStay.EXTRA_NAME, data.name)
                 DataIntent.putExtra(DetailHomeStay.EXTRA_HARGA, data.harga)
@@ -68,8 +68,8 @@ class TourGuide : AppCompatActivity() {
         })
     }
 
-    private fun showSelectedHero(heroTourguide: HeroTourguide) {
-        Toast.makeText(this, "Kamu memilih " + heroTourguide.name, Toast.LENGTH_SHORT).show()
+    private fun showSelectedHero(heroHomestay: HeroHomestay) {
+        Toast.makeText(this, "Kamu memilih " + heroHomestay.name, Toast.LENGTH_SHORT).show()
     }
 
 

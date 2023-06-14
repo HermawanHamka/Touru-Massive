@@ -16,7 +16,7 @@
             android:name=".DetailDestinasi"
             android:exported="false" />
         <activity
-            android:name=".DetailTourGuide"
+            android:name=".DetailHomeStay"
             android:exported="false" />
         <activity
             android:name=".TourGuide"
