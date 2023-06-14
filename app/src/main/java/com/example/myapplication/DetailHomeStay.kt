@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
-class DetailTourGuide : AppCompatActivity() {
+class DetailHomeStay : AppCompatActivity() {
 
     companion object {
         const val EXTRA_IMAGE = "extra_image"
@@ -54,7 +54,7 @@ class DetailTourGuide : AppCompatActivity() {
 
 
 
-        Glide.with(this@DetailTourGuide)
+        Glide.with(this@DetailHomeStay)
             .load(photo)
             .into(ivItemPhoto)
     }
