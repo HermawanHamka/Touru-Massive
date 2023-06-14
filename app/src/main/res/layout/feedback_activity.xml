@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="FeedbackActivity">
+    
+    <LinearLayout
+        android:id="@+id/layoutRating"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <LinearLayout
+            android:layout_width="307dp"
+            android:layout_height="563dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/inputext"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imgCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    android:src="@drawable/cancel" />
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:fontFamily="@font/poppins_extrabold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Maybay Villa"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="Rabu, DD/MM/YYYY, 00.00"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="2dp"
+                android:alpha="8.5"
+                android:background="#585858"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="345dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_question1"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="Bagaimana Pengalaman Anda?"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:stepSize="1"
+                    android:progressBackgroundTint="@color/abu"
+                    android:progressTint="@color/blue"
+                    android:transformPivotX="120dp"
+                    android:transformPivotY="30dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="12dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="2dp"
+                android:alpha="8.5"
+                android:background="#585858"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="345dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_fb1"
+                        android:layout_width="62dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/bg_btn_fd"
+                        android:backgroundTint="@color/abu"
+                        android:text="Bersih"
+                        android:textSize="10sp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        tools:ignore="MissingConstraints" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_fb2"
+                        android:layout_width="62dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/bg_btn_fd"
+                        android:backgroundTint="@color/abu"
+                        android:text="Nyaman"
+                        android:textSize="10sp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_fb3"
+                        android:layout_width="62dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/bg_btn_fd"
+                        android:backgroundTint="@color/abu"
+                        android:text="Ramah"
+                        android:textSize="10sp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"/>
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_fb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:background="@drawable/bg_btn_fd"
+                    android:backgroundTint="@color/abu"
+                    android:text="Makanan Enak"
+                    android:textSize="10sp"
+                    android:layout_marginStart="60dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_fb5"
+                    android:layout_width="62dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/bg_btn_fd"
+                    android:backgroundTint="@color/abu"
+                    android:text="Strategis"
+                    android:textSize="10sp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_fb6"
+                    android:layout_width="62dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/bg_btn_fd"
+                    android:backgroundTint="@color/abu"
+                    android:text="Bersih"
+                    android:textSize="10sp"
+                    android:layout_marginStart="125dp"/>
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="2dp"
+                android:alpha="8.5"
+                android:background="#585858"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="345dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_question2"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="Ceritakan Pengalamanmu\n di Homestay tersebut"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextFeedBack"
+                    android:layout_width="247dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="10sp"
+                    android:background="@drawable/inputext"
+                    android:backgroundTint="@color/grey"
+                    android:hint="Tuliskan pengalaman anda disini"
+                    android:paddingBottom="90dp"
+                    android:paddingStart="10dp"
+                    android:textColorHint="@color/black">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnKirimFeedBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_onboarding"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Kirim"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
