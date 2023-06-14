@@ -1,12 +1,89 @@
 <resources>
-    <string name="app_name">MyApplication</string>
+    <string name="app_name">Touru</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_lanjut">Lanjut</string>
     <string name="btn_mulai">Mulai Cari</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Vivamus eu tempor ex.</string>
+
     <string name="pajak_dan_biaya">Pajak dan Biaya</string>
     <string name="harga_total">Harga Total</string>
     <string name="pilih_pembayaran_anda">Pilih Pembayaran Anda</string>
+    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="description">Deskripsi</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="nama_destinasi">Nama Destinasi</string>
+
+
+    //Hero TourGuide
+    <string-array name="data_name">
+        <item>izul</item>
+        <item>hermawan</item>
+        <item>dito</item>
+        <item>rama</item>
+        <item>birul</item>
+        <item>akmal</item>
+        <item>veve</item>
+        <item>ardi</item>
+        <item>husain</item>
+        <item>joko</item>
+
+    </string-array>
+
+    <string-array name="data_harga">
+        <item>Rp. 55.000/Hari</item>
+        <item>Rp. 53.000/Hari</item>
+        <item>Rp. 57.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 59.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 54.000/Hari</item>
+        <item>Rp. 50.000/Hari</item>
+        <item>Rp. 55.000/Hari</item>
+
+    </string-array>
+    <string-array name="data_rating">
+        <item>4.6</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.1</item>
+        <item>4.6</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.4</item>
+        <item>4.8</item>
+        <item>4.3</item>
+
+    </string-array>
+
+    <string-array name="data_detail">
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+        <item>aku adalah aku dan kamu adalah kamu, huaauhahahahahaha.. mabedes mabedes</item>
+
+
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+        <item>@drawable/bali</item>
+    </integer-array>
 </resources>
