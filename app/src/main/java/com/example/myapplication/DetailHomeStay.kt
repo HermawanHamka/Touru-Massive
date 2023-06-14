@@ -1,7 +1,10 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -17,9 +20,11 @@ class DetailHomeStay : AppCompatActivity() {
     }
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_tour_guide)
+
 
         fun getListHeroes(): ArrayList<HeroTourguide> {
             val dataName = resources.getStringArray(R.array.data_name)

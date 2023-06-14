@@ -148,7 +148,7 @@
                 android:layout_marginLeft="20dp"
                 />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnMasukHome"
+                android:id="@+id/btnPesanTG"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
