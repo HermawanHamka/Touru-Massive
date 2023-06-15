@@ -2,20 +2,27 @@ package com.example.myapplication.fragment_menu
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.model.DestinasiModel
 import com.example.myapplication.DetailDestinasi
 import com.example.myapplication.R
 import com.example.myapplication.adapter.DestinasiAdapter
 import com.example.myapplication.find
-import com.example.myapplication.model.HeroDestinasi
+import com.example.myapplication.retrofit.ApiService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DestinasiFragment : Fragment() {
+    private val TAG: String = "DestinasiFragment"
+    lateinit var destinasiAdapter: DestinasiAdapter
 
 
     override fun onCreateView(
@@ -25,55 +32,66 @@ class DestinasiFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_destinasi, container, false)
 
+
     }
 
-    companion object{
-        val INTENT_PARCELABLE = "OBJECT_INTENT"
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val destinasiList = listOf<HeroDestinasi>(
-            HeroDestinasi(
-                R.drawable.kawah_putih,
-                "Kawah Putih",
-            "bla bla bla"
-            ),
-            HeroDestinasi(
-                R.drawable.bali,
-                "Bali",
-            "bla bla bla"
-            ),
-            HeroDestinasi(
-                R.drawable.pulau_komodo,
-                "Pulau Komodo",
-            "bla bla bla"
-            ),
-            HeroDestinasi(
-                R.drawable.candi_borobudur,
-                "Borobudur",
-            "bla bla bla"
-            ),
-            HeroDestinasi(
-                R.drawable.raja_ampat,
-                "Raja Ampat",
-                "bla bla bla"
-            ),
-            HeroDestinasi(
-                R.drawable.labuan_bajo,
-                "Labuan Bajo",
-                "bla bla bla"
-            )
-        )
-
+    private fun setupRecyclerView() {
         val recyclerView by lazy { find<RecyclerView>(R.id.rv_heroes) }
-        recyclerView.layoutManager = GridLayoutManager(this.context,2, GridLayoutManager.VERTICAL, false)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = this.context?.let {
-            DestinasiAdapter(it, destinasiList) {
-                    val intent = Intent(this.context, DetailDestinasi::class.java)
-                    intent.putExtra(INTENT_PARCELABLE, it)
-                    startActivity(intent)
+        destinasiAdapter = DestinasiAdapter(arrayListOf(), object : DestinasiAdapter.OnAdapterListener {
+            override fun onClick(results: DestinasiModel.Result) {
+                startActivity(
+                    Intent(activity, DetailDestinasi::class.java)
+                        .putExtra("intent_image", results.image)
+                        .putExtra("intent_title", results.title)
+                )
             }
+
+        })
+        recyclerView.apply {
+            recyclerView.layoutManager = GridLayoutManager(context,2, GridLayoutManager.VERTICAL, false)
+            recyclerView.adapter = destinasiAdapter
+
         }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onStart()
+        setupRecyclerView()
+        getDataFromApi()
+
+
+    }
+    private fun getDataFromApi() {
+        val progressBar = view?.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar!!.visibility = View.VISIBLE
+        ApiService.endPoint.getData()
+            .enqueue(object : Callback<DestinasiModel>{
+                override fun onResponse(
+                    call: Call<DestinasiModel>,
+                    response: Response<DestinasiModel>)
+                {
+                    progressBar.visibility = View.GONE
+                    if (response.isSuccessful) {
+                        showData(response.body()!!)
+                    }
+                }
+
+                override fun onFailure(call: Call<DestinasiModel>, t: Throwable) {
+                    progressBar.visibility = View.GONE
+                    printLog("on Failure : $t")
+                }
+
+            })
+
+    }
+    private fun printLog(message: String) {
+        Log.d(TAG, message)
+    }
+
+    private fun showData(data: DestinasiModel) {
+        val results = data.result
+        destinasiAdapter.setData(results)
+    }
 }
+
+
