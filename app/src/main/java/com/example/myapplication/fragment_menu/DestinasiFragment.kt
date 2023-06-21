@@ -8,10 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-<<<<<<< HEAD
-=======
 import android.widget.Toast
->>>>>>> 871b5c5 (destinasi dan login)
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.model.DestinasiModel
@@ -19,11 +16,8 @@ import com.example.myapplication.DetailDestinasi
 import com.example.myapplication.R
 import com.example.myapplication.adapter.DestinasiAdapter
 import com.example.myapplication.find
-<<<<<<< HEAD
-=======
 import com.example.myapplication.model.Data
 import com.example.myapplication.model.DataDestination
->>>>>>> 871b5c5 (destinasi dan login)
 import com.example.myapplication.retrofit.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,11 +25,7 @@ import retrofit2.Response
 
 class DestinasiFragment : Fragment() {
     private val TAG: String = "DestinasiFragment"
-<<<<<<< HEAD
-    lateinit var destinasiAdapter: DestinasiAdapter
-=======
     private  lateinit var destinasiAdapter: DestinasiAdapter
->>>>>>> 871b5c5 (destinasi dan login)
 
 
     override fun onCreateView(
@@ -51,13 +41,6 @@ class DestinasiFragment : Fragment() {
     private fun setupRecyclerView() {
         val recyclerView by lazy { find<RecyclerView>(R.id.rv_heroes) }
         destinasiAdapter = DestinasiAdapter(arrayListOf(), object : DestinasiAdapter.OnAdapterListener {
-<<<<<<< HEAD
-            override fun onClick(results: DestinasiModel.Result) {
-                startActivity(
-                    Intent(activity, DetailDestinasi::class.java)
-                        .putExtra("intent_image", results.image)
-                        .putExtra("intent_title", results.title)
-=======
             override fun onClick(results:DataDestination) {
                 startActivity(
                     Intent(activity, DetailDestinasi::class.java)
@@ -67,7 +50,6 @@ class DestinasiFragment : Fragment() {
                         .putExtra("intent_city", results.city)
                         .putExtra("intent_localprice", results.localPrice)
                         .putExtra("intent_interprice", results.interPrice)
->>>>>>> 871b5c5 (destinasi dan login)
                 )
             }
 
@@ -97,12 +79,8 @@ class DestinasiFragment : Fragment() {
                 {
                     progressBar.visibility = View.GONE
                     if (response.isSuccessful) {
-<<<<<<< HEAD
-                        showData(response.body()!!)
-=======
                         Toast.makeText(context, "Destinasi ${response.body()}", Toast.LENGTH_SHORT).show()
                         if(response.body()!= null) showData(response.body()!!)
->>>>>>> 871b5c5 (destinasi dan login)
                     }
                 }
 
@@ -118,14 +96,9 @@ class DestinasiFragment : Fragment() {
         Log.d(TAG, message)
     }
 
-<<<<<<< HEAD
-    private fun showData(data: DestinasiModel) {
-        val results = data.result
-=======
     fun showData(data: DestinasiModel) {
         val results:ArrayList<DataDestination> = arrayListOf()
         results.addAll(data.data)
->>>>>>> 871b5c5 (destinasi dan login)
         destinasiAdapter.setData(results)
     }
 }

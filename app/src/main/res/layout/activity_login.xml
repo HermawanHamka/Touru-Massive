@@ -30,22 +30,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-    
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="5dp"
-    android:fontFamily="@font/poppins_bold"
-    android:text="TOUR'U"
-    android:textColor="@color/black"
-    android:textSize="40dp"
-    app:layout_constraintBottom_toTopOf="@id/linearLayout"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/logoLogin" />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="TOUR'U"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoLogin" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -86,7 +86,7 @@
             android:textColor="@color/black"
             android:textSize="16dp" />
 
-    
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -120,10 +120,7 @@
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-=======
                 android:id="@+id/editPassLogin"
->>>>>>> 871b5c5 (destinasi dan login)
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/grey"
@@ -153,8 +150,6 @@
             android:textColor="@color/white"
             android:background="@drawable/btn_onboarding"
             android:text="Masuk" />
-<<<<<<< HEAD
-=======
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDummy"
@@ -166,7 +161,6 @@
             android:textColor="@color/white"
             android:background="@drawable/btn_onboarding"
             android:text="Dummy" />
->>>>>>> 871b5c5 (destinasi dan login)
     </LinearLayout>
 
     <TextView

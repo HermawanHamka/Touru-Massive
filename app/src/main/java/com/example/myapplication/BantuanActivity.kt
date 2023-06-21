@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
-import com.example.myapplication.fragment_menu.ProfileFragment
 
 class BantuanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

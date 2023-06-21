@@ -105,10 +105,7 @@
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-=======
                     android:id="@+id/editPassRegister"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
@@ -118,31 +115,6 @@
                     android:paddingBottom="5dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-<<<<<<< HEAD
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="10dp"
-
-                android:paddingBottom="5dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editNamaDepanRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:backgroundTint="@color/grey"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textSize="15dp"
-                    android:hint="Nama Depan"
-                    android:paddingBottom="5dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-=======
->>>>>>> 871b5c5 (destinasi dan login)
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,21 +125,13 @@
                 android:paddingBottom="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                    android:id="@+id/editNamaBelakangRegister"
-=======
                     android:id="@+id/editUsernameRegister"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:fontFamily="@font/poppins_regular"
                     android:textSize="15dp"
                     android:backgroundTint="@color/grey"
-<<<<<<< HEAD
-                    android:hint="Nama Belakang"
-=======
                     android:hint="Username"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:paddingBottom="5dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,11 +167,7 @@
                 android:paddingBottom="5dp">
 
                 <EditText
-<<<<<<< HEAD
-                    android:id="@+id/tanggalLahir"
-=======
                     android:id="@+id/editTanggalLahir"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
@@ -231,11 +191,7 @@
                 android:paddingBottom="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                    android:id="@+id/editEmailLogin"
-=======
                     android:id="@+id/editNomorRegister"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/grey"
@@ -259,11 +215,7 @@
                 />
 
             <Button
-<<<<<<< HEAD
-                android:id="@+id/btn_pick_img"
-=======
                 android:id="@+id/btn_ktp"
->>>>>>> 871b5c5 (destinasi dan login)
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"

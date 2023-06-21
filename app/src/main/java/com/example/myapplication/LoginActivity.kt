@@ -4,16 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-<<<<<<< HEAD
-
-import android.widget.TextView
-import com.example.myapplication.fragment_menu.HomeFragment
-
-class LoginActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-=======
 import android.widget.EditText
 
 import android.widget.TextView
@@ -39,19 +29,13 @@ class LoginActivity : AppCompatActivity() {
 
         sharedPref = PreferenceHelper(this)
 
->>>>>>> 871b5c5 (destinasi dan login)
         /* get id */
         val lupaSandi  = findViewById<TextView>(R.id.lupaKataSandiLogin)
         val daftar  = findViewById<TextView>(R.id.textDaftarLogin)
         val login = findViewById<Button>(R.id.btnMasukHome)
-<<<<<<< HEAD
-
-
-=======
         val editEmail = findViewById<EditText>(R.id.editEmailLogin)
         val editPass = findViewById<EditText>(R.id.editPassLogin)
         val dummy = findViewById<Button>(R.id.btnDummy)
->>>>>>> 871b5c5 (destinasi dan login)
 
         //pindah activity
         lupaSandi.setOnClickListener {
@@ -63,12 +47,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(pindahDaftar)
         }
         login.setOnClickListener {
-<<<<<<< HEAD
-            val pindahHome = Intent(this, NavbarActivity::class.java)
-            startActivity(pindahHome)
-        }
-    }
-=======
             login(editEmail,editPass)
         }
 //        dummy.setOnClickListener {
@@ -132,5 +110,4 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this, NavbarActivity::class.java))
         finish()
     }
->>>>>>> 871b5c5 (destinasi dan login)
 }

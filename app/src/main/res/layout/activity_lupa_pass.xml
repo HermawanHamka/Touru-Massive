@@ -102,11 +102,7 @@
                 android:paddingBottom="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                    android:id="@+id/editEmailLogin"
-=======
                     android:id="@+id/editEmailLupa"
->>>>>>> 871b5c5 (destinasi dan login)
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="10dp"
