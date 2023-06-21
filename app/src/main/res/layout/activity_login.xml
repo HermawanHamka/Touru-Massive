@@ -120,6 +120,10 @@
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
+<<<<<<< HEAD
+=======
+                android:id="@+id/editPassLogin"
+>>>>>>> 871b5c5 (destinasi dan login)
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/grey"
@@ -149,6 +153,20 @@
             android:textColor="@color/white"
             android:background="@drawable/btn_onboarding"
             android:text="Masuk" />
+<<<<<<< HEAD
+=======
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDummy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_onboarding"
+            android:text="Dummy" />
+>>>>>>> 871b5c5 (destinasi dan login)
     </LinearLayout>
 
     <TextView

@@ -12,6 +12,7 @@ import com.example.myapplication.fragment_menu.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavbarActivity : AppCompatActivity() {
+<<<<<<< HEAD
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navbar)
@@ -19,6 +20,14 @@ class NavbarActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController = findNavController(R.id.fragment)
 
+=======
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_navbar)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val navController = findNavController(R.id.fragment)
+>>>>>>> 871b5c5 (destinasi dan login)
         bottomNavigationView.setupWithNavController(navController)
 
     }
