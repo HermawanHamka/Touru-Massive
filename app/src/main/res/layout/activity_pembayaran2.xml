@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
-
+    android:background="@color/grey"
+    tools:context=".Pembayaran2Activity"
+    >
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLanjut"
@@ -12,13 +14,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/btn_onboarding"
+        android:fontFamily="@font/poppins_semibold"
         android:text="LANJUT"
         android:textColor="@color/white"
         android:textSize="10sp"
-        android:fontFamily="@font/poppins_semibold"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="627dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -44,7 +49,7 @@
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/imgBackTentangKami"
+            android:id="@+id/imgBackPembayaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -65,57 +70,58 @@
         android:background="@drawable/inputext"
         android:elevation="10dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="143dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1"
+        app:layout_constraintVertical_bias="0.389"
         tools:ignore="MissingConstraints">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Kode Pembayaran Anda Adalah"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_bold"
-            android:textSize="15sp"
+            android:text="Kode Pembayaran Anda Adalah"
             android:textColor="@color/black"
-            tools:ignore="ExtraText">
-        </TextView>
+            android:textSize="15sp"
+            tools:ignore="ExtraText"></TextView>
+
         <TextView
             android:id="@+id/btn_salin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Salin"
             android:layout_marginStart="250dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_semibold"
+            android:text="Salin"
             android:textSize="15sp"
-            tools:ignore="ExtraText,RtlHardcoded">
-        </TextView>
+            tools:ignore="ExtraText,RtlHardcoded"></TextView>
+
         <TextView
             android:id="@+id/kodePembayaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="08345726348262"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_bold"
-            android:textSize="25sp"
+            android:text="08345726348262"
             android:textColor="@color/black"
-            tools:ignore="ExtraText">
-        </TextView>
+            android:textSize="25sp"
+            tools:ignore="ExtraText"></TextView>
+
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="5dp"
-        android:text="Silahkan bayar sebelum 5 jam kedepan dan bayar sesuai dengan piilhan yang anda buat"
-        android:layout_gravity="center"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        tools:ignore="ExtraText">
-    </TextView>
-
-
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Silahkan bayar sebelum 5 jam kedepan dan bayar sesuai dengan piilhan yang anda buat"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="ExtraText"></TextView>
 
 
     </LinearLayout>

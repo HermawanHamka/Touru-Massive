@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.model.DestinasiModel
@@ -16,9 +15,8 @@ import com.example.myapplication.DetailDestinasi
 import com.example.myapplication.R
 import com.example.myapplication.adapter.DestinasiAdapter
 import com.example.myapplication.find
-import com.example.myapplication.model.Data
 import com.example.myapplication.model.DataDestination
-import com.example.myapplication.retrofit.ApiService
+import com.example.myapplication.retrofit_destinasi.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,17 +37,17 @@ class DestinasiFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        val recyclerView by lazy { find<RecyclerView>(R.id.rv_heroes) }
+        val recyclerView by lazy { find<RecyclerView>(R.id.rv_heroes_homestay) }
         destinasiAdapter = DestinasiAdapter(arrayListOf(), object : DestinasiAdapter.OnAdapterListener {
-            override fun onClick(results:DataDestination) {
+            override fun onClick(results: DataDestination) {
                 startActivity(
-                    Intent(activity, DetailDestinasi::class.java)
-                        .putExtra("intent_photo", results.photo)
-                        .putExtra("intent_title", results.title)
-                        .putExtra("intent_desc", results.desc)
-                        .putExtra("intent_city", results.city)
-                        .putExtra("intent_localprice", results.localPrice)
-                        .putExtra("intent_interprice", results.interPrice)
+                    Intent(context, DetailDestinasi::class.java)
+                        .putExtra("photo", "http://192.168.100.7:3000${results.photo}")
+                        .putExtra("title", results.title)
+                        .putExtra("desc", results.desc)
+                        .putExtra("city", results.city)
+                        .putExtra("localprice", "Harga masuk domestik : ${results.localPrice}")
+                        .putExtra("interprice", "Harga masuk mancanegara : ${results.interPrice}")
                 )
             }
 
@@ -79,7 +77,6 @@ class DestinasiFragment : Fragment() {
                 {
                     progressBar.visibility = View.GONE
                     if (response.isSuccessful) {
-                        Toast.makeText(context, "Destinasi ${response.body()}", Toast.LENGTH_SHORT).show()
                         if(response.body()!= null) showData(response.body()!!)
                     }
                 }

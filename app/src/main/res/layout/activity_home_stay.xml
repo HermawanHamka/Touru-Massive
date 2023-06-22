@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEF0"
-    tools:context=".HomeStay">
+    tools:context=".HomestayActivity">
 
 
-    <ImageView
-        android:id="@+id/kembali"
+    <ImageButton
+        android:id="@+id/kembaliH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -24,11 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="12dp"
-        android:text="Home Stay"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Homestay"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/kembali"
+        app:layout_constraintLeft_toRightOf="@+id/kembaliH"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.SearchView
@@ -40,16 +41,31 @@
         android:layout_marginRight="20dp"
         android:background="@color/white"
         android:text="cari lokasi"
-        app:layout_constraintTop_toBottomOf="@id/kembali" />
+        app:layout_constraintTop_toBottomOf="@id/kembaliH" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_heroes"
+        android:id="@+id/rv_heroes_homestay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/card_item"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/search_view" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        tools:listitem="@layout/card_item_tourguide" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="87dp"
+        android:layout_height="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

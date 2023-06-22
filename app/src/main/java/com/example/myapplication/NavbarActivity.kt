@@ -8,7 +8,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.fragment_menu.DestinasiFragment
 import com.example.myapplication.fragment_menu.HomeFragment
-
+import com.example.myapplication.fragment_menu.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavbarActivity : AppCompatActivity() {

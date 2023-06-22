@@ -1,66 +1,38 @@
 package com.example.myapplication
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
-class DetailHomeStay : AppCompatActivity() {
-
-    companion object {
-        const val EXTRA_IMAGE = "extra_image"
-        const val EXTRA_NAME = "extra_name"
-        const val EXTRA_HARGA = "extra_harga"
-        const val EXTRA_DETAIL = "extra_detail"
-        const val EXTRA_RATING = "extra_rating"
-    }
-
-
-
+class DetailHomestay : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_tour_guide)
+        setContentView(R.layout.activity_detail_homestay)
+        Glide.with(this)
+            .load(intent.getStringExtra("photo_homestay"))
+            .placeholder(R.drawable.grey_background)
+            .error(R.drawable.grey_background)
+            .into(findViewById(R.id.photoHomestay))
 
+        val namaTourguide = findViewById<TextView>(R.id.nama_homestay)
+        namaTourguide.text = intent.getStringExtra("title")
 
-        fun getListHeroes(): ArrayList<HeroTourguide> {
-            val dataName = resources.getStringArray(R.array.data_name)
-            val dataHarga = resources.getStringArray(R.array.data_harga)
-            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
-            val dataRating = resources.getStringArray(R.array.data_rating)
-            val detailProduk = resources.getStringArray(R.array.data_detail)
-            val listHeroTourguides = ArrayList<HeroTourguide>()
-            for (i in dataName.indices) {
-                val heroTourguide = HeroTourguide(dataName[i], dataHarga[i], dataPhoto.getResourceId(i, -1), dataRating[i], detailProduk[i])
-                listHeroTourguides.add(heroTourguide)
-            }
-            return listHeroTourguides
+        val lokasiHomestay = findViewById<TextView>(R.id.lokasiH)
+        lokasiHomestay .text = intent.getStringExtra("location_homestay")
+
+        val deskripsiHomestay = findViewById<TextView>(R.id.descH)
+        deskripsiHomestay.text = intent.getStringExtra("desc_homestay")
+
+        val hargaHomestay = findViewById<TextView>(R.id.hargaH)
+        hargaHomestay.text = intent.getStringExtra("price_homestay")
+
+        val btnPesanHomestay = findViewById<Button>(R.id.btnPesanHomestay)
+        btnPesanHomestay.setOnClickListener {
+            val pindahPesanHomestay = Intent(this, TransaksiActivity::class.java)
+            startActivity(pindahPesanHomestay)
         }
-        val tvItemName: TextView = findViewById(R.id.nama_tour)
-        val tvItemRating: TextView = findViewById(R.id.rating)
-        val ivItemPhoto: ImageView = findViewById(R.id.pp)
-        val tvItemDetailDesc: TextView = findViewById(R.id.detailtour)
-        val tvHarga: TextView = findViewById(R.id.harga)
-
-        val name = intent.getStringExtra(EXTRA_NAME)
-        val harga = intent.getStringExtra(EXTRA_HARGA)
-        val detail = intent.getStringExtra(EXTRA_DETAIL)
-        val photo = intent.getIntExtra(EXTRA_IMAGE, 0)
-        val rating = intent.getStringExtra(EXTRA_RATING)
-
-        tvItemName.text = name
-        tvItemRating.text = rating
-        tvItemDetailDesc.text = detail
-        tvHarga.text = harga
-
-
-
-
-        Glide.with(this@DetailHomeStay)
-            .load(photo)
-            .into(ivItemPhoto)
     }
-    }
+}

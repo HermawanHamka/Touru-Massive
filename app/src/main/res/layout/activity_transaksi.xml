@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context="TransaksiActivity">
+    tools:context=".TransaksiActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPesan"
@@ -14,12 +14,14 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:background="@drawable/btn_onboarding"
+        android:fontFamily="@font/poppins_semibold"
         android:text="PESAN"
         android:textColor="@color/white"
         android:textSize="10sp"
-        android:fontFamily="@font/poppins_semibold"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="627dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTransaksi2"
         tools:ignore="MissingConstraints" />
 
     <RelativeLayout
@@ -46,7 +48,7 @@
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/imgBackTentangKami"
+            android:id="@+id/imgBackTransaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -89,7 +91,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/TanggalSinggah"
+            android:id="@+id/tanggalSinggah"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -103,7 +105,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/TanggalKeluar"
+            android:id="@+id/tanggalKeluar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -114,15 +116,15 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="Keluar"
             android:minHeight="48dp"
-            android:onClick="showDatePickerDialog"
+            android:onClick="showDatePickerDialogKeluar"
             android:paddingBottom="5dp"
             android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutTransaksi2"
-        android:layout_width="311dp"
-        android:layout_height="211dp"
+        android:layout_width="334dp"
+        android:layout_height="212dp"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="300dp"
@@ -152,7 +154,7 @@
 
         <TextView
             android:id="@+id/textHargaTot"
-            android:layout_width="287dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/poppins_regular"
@@ -164,7 +166,7 @@
 
         <TextView
             android:id="@+id/textHargaHomestay"
-            android:layout_width="287dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
@@ -177,10 +179,10 @@
 
         <TextView
             android:id="@+id/textPajakBiaya"
-            android:layout_width="287dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="left"
             android:text="@string/pajak_dan_biaya"

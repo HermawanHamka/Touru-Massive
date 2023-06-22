@@ -7,4 +7,4 @@ import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
-inline fun <reified T : RecyclerView> Fragment.find(Id:Int): T = view?.findViewById(R.id.rv_heroes) as T
+inline fun <reified T : RecyclerView> Fragment.find(Id:Int): T = view?.findViewById(R.id.rv_heroes_destinasi) as T

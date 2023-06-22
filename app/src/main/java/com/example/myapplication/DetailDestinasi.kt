@@ -8,32 +8,31 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
-@Suppress("DEPRECATION")
 class DetailDestinasi : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_destinasi)
         Glide.with(this)
-            .load(intent.getStringExtra("intent_image"))
-
-
+            .load(intent.getStringExtra("photo"))
             .placeholder(R.drawable.grey_background)
             .error(R.drawable.grey_background)
             .into(findViewById(R.id.img_item_fotodestinasi))
 
-        val nameDestinasi = findViewById<TextView>(R.id.tv_item_nama_destinasi)
-        nameDestinasi.text = intent.getStringExtra("intent_title")
-//        val destinasi = intent.getParcelableExtra<HeroDestinasi>(DestinasiFragment.INTENT_PARCELABLE)
-//
-//        val imgDestinasi = findViewById<ImageView>(R.id.img_item_fotodestinasi)
-//        val nameDestinasi = findViewById<TextView>(R.id.tv_item_nama_destinasi)
-//        val deskripsiDestinasi = findViewById<TextView>(R.id.tv_item_deskripsi_destinasi)
-//
-//
-//        imgDestinasi.setImageResource(destinasi?.imgDestinasi!!)
-//        nameDestinasi.text = destinasi.namaDestinasi
-//        deskripsiDestinasi.text = destinasi.deskripsiDestinasi
-//
+        val namaDestinasi = findViewById<TextView>(R.id.tv_item_nama_destinasi)
+        namaDestinasi.text = intent.getStringExtra("title")
+
+        val kotaDestinasi = findViewById<TextView>(R.id.tv_item_city_destinasi)
+        kotaDestinasi.text = intent.getStringExtra("city")
+
+        val deskripsiDestinasi = findViewById<TextView>(R.id.tv_item_deskripsi_destinasi)
+        deskripsiDestinasi.text = intent.getStringExtra("desc")
+
+        val hargaLokal = findViewById<TextView>(R.id.tv_localprice)
+        hargaLokal.text = intent.getStringExtra("localprice")
+        val hargaInter = findViewById<TextView>(R.id.tv_interprice)
+        hargaInter.text = intent.getStringExtra("localprice")
+
         val backButton: ImageButton = findViewById<ImageButton>(R.id.tombol_kembali)
         backButton.setOnClickListener {
             val intent = Intent()
@@ -43,3 +42,4 @@ class DetailDestinasi : AppCompatActivity() {
     }
 }
 }
+

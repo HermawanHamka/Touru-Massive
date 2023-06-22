@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ class KeluarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_keluar)
         /* get id */
         val btnYes = findViewById<Button>(R.id.btnYes)
+        val btnNo = findViewById<Button>(R.id.btnNo)
 
         sharedPref = PreferenceHelper(this)
 
@@ -24,6 +26,13 @@ class KeluarActivity : AppCompatActivity() {
             sharedPref.clear()
             Toast.makeText(applicationContext,"Berhasil Keluar!!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        btnNo.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("checkbox_status", true)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
     }

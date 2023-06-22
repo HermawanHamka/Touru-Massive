@@ -50,7 +50,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_heroes"
+        android:id="@+id/rv_heroes_destinasi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        tools:listitem="@layout/list_item_destinasi" />
+        tools:listitem="@layout/card_item_destinasi" />
 
     <ProgressBar
         android:id="@+id/progressBar"

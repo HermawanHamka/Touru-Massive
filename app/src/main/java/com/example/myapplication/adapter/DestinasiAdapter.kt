@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.myapplication.model.DestinasiModel
 import com.example.myapplication.R
-import com.example.myapplication.model.Data
 import com.example.myapplication.model.DataDestination
 
 class DestinasiAdapter(val results: ArrayList<DataDestination>, val listener: OnAdapterListener)
     : RecyclerView.Adapter<DestinasiAdapter.ViewHolder> () {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.list_item_destinasi, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.card_item_destinasi, parent, false)
     )
 
     override fun getItemCount() = results.size
@@ -24,7 +22,7 @@ class DestinasiAdapter(val results: ArrayList<DataDestination>, val listener: On
         val result = results[position]
         holder.view.findViewById<TextView>(R.id.namaDestinasi).text = result.title
         Log.d("DestinasiAdapter","resultImage: ${result.photo}")
-        val url = "http://192.168.100.6:3000${result.photo}"
+        val url = "http://192.168.100.7:3000${result.photo}"
         Glide.with(holder.view)
             .load(url)
             .placeholder(R.drawable.grey_background)

@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
@@ -9,8 +10,9 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
 import android.widget.*
-import com.example.myapplication.app.ApiConfig
+import com.example.myapplication.helper.Constant
 import com.example.myapplication.model.ResponModel
+import com.example.myapplication.retrofit_loginregister.ApiConfig
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,10 +26,11 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var button: Button
     private lateinit var imageView: ImageView
 
-    companion object{
-        val IMAGE_REQUEST_CODE = 100
-    }
+//    companion object{
+//        val IMAGE_REQUEST_CODE = 100
+//    }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -37,39 +40,46 @@ class RegisterActivity : AppCompatActivity() {
         val emailRegister = findViewById<EditText>(R.id.editEmailLRegister)
         val passRegister = findViewById<EditText>(R.id.editPassRegister)
         val nameRegister = findViewById<EditText>(R.id.editUsernameRegister)
-        val tempatRegister = findViewById<EditText>(R.id.editTempatLahirRegister)
         val tanggalRegister = findViewById<EditText>(R.id.editTanggalLahir)
         val noRegister = findViewById<EditText>(R.id.editNomorRegister)
-        val imgRegister = findViewById<ImageView>(R.id.image_save)
+        val dummy = findViewById<Button>(R.id.btnDummyRegister)
 
 
-        button = findViewById(R.id.btn_ktp)
+        dummy.setOnClickListener {
+            emailRegister.setText("well@gmail.com")
+            passRegister.setText("well123")
+            nameRegister.setText("well")
+            tanggalRegister.setText("12/04/2002")
+            noRegister.setText("081263")
+
+        }
+//        button = findViewById(R.id.btn_ktp)
 
 
         //pindah activity
         daftarRegister.setOnClickListener {
-            register (emailRegister,passRegister,nameRegister,/*tempatRegister,*/
-                tanggalRegister,noRegister,imgRegister)
+            register (emailRegister,passRegister,nameRegister,
+                tanggalRegister,noRegister)
         }
         loginRegister.setOnClickListener {
             val pindahLogin= Intent(this, LoginActivity::class.java)
             startActivity(pindahLogin)
         }
-
-        // galeri
-        button.setOnClickListener {
-            pickImageGallery()
-        }
+//
+//        // galeri
+//        button.setOnClickListener {
+//            pickImageGallery()
+//        }
     }
 
-    private fun pickImageGallery() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        startActivityForResult(intent, IMAGE_REQUEST_CODE)
-    }
+//    private fun pickImageGallery() {
+//        val intent = Intent(Intent.ACTION_PICK)
+//        intent.type = "image/*"
+//        startActivityForResult(intent, IMAGE_REQUEST_CODE)
+//    }
 
     // tanggal lahir
-    fun showDatePickerDialog(view: View) {
+    fun showDatePickerDialogs(view: View) {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
@@ -87,15 +97,15 @@ class RegisterActivity : AppCompatActivity() {
         datePickerDialog.show()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
-            imageView.setImageURI(data?.data)
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
+//            imageView.setImageURI(data?.data)
+//        }
+//    }
 
     fun register(emailRegister:TextView, passRegister:TextView, nameRegister:TextView, /*tempatRegister:TextView,*/
-                 tanggalRegister:TextView,noRegister:TextView,imgRegister : ImageView) {
+                 tanggalRegister:TextView,noRegister:TextView) {
         if (emailRegister.text.isEmpty()) {
             emailRegister.error = "Kolom nama tidak boleh kosong"
             emailRegister.requestFocus()
@@ -108,10 +118,6 @@ class RegisterActivity : AppCompatActivity() {
             nameRegister.error = "Kolom username tidak boleh kosong"
             nameRegister.requestFocus()
             return
-//       } else if (tempatRegister.text.isEmpty()) {
-//           tempatRegister.error = "Kolom tempat lahir tidak boleh kosong"
-//           tempatRegister.requestFocus()
-//           return
         } else if (tanggalRegister.text.isEmpty()) {
             tanggalRegister.error = "Kolom tanggal lahir tidak boleh kosong"
             tanggalRegister.requestFocus()
@@ -126,17 +132,13 @@ class RegisterActivity : AppCompatActivity() {
             tanggalRegister.text.toString(),noRegister.text.toString()  ).enqueue(object :Callback<ResponModel>{
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-//               pb.visibility = View.GONE
+
                 val respon = response.body()!!
-//               if (respon.success) {
-////                   s.setStatusLogin(true)
-//                   val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-//                   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-//                   startActivity(intent)
-//                   Toast.makeText(this@RegisterActivity, "Selamat datang ", Toast.LENGTH_SHORT).show()
-//               } else {
-//                   Toast.makeText(this@RegisterActivity, "Error:", Toast.LENGTH_SHORT).show()
-//               }
+                if (!respon.token.isNullOrEmpty()){
+                    Toast.makeText(this@RegisterActivity, "Pendaftaran Akun Berhasil", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@RegisterActivity, "Error:"+respon.data, Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {

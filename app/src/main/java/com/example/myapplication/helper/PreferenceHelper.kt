@@ -3,6 +3,8 @@ package com.example.myapplication.helper
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.myapplication.LoginActivity
+import com.example.myapplication.fragment_menu.ProfileFragment
+
 class PreferenceHelper(context: Context) {
 
 
