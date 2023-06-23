@@ -20,6 +20,8 @@
     <TextView
         android:id="@+id/textView"
         style="@style/poppins_regular"
+        android:maxLength="9"
+        android:textAllCaps="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Halo, Kobo!"

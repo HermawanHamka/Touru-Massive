@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2970a4a6-1b19-4ae1-8af9-169789d81181" name="Changes" comment="Menambahkan pembayaran" />
+    <list default="true" id="2970a4a6-1b19-4ae1-8af9-169789d81181" name="Changes" comment="Menambahkan retrofit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_homestay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_homestay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +67,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="ToolWindowLogcat.ShowToolbar" value="false" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="com.android.tools.idea.emulator.zoom.toolbar.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -160,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687455682989</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Menambahkan retrofit">
+      <created>1687490056705</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687490056705</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +188,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menambahkan pembayaran" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menambahkan pembayaran" />
+    <MESSAGE value="Menambahkan retrofit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menambahkan retrofit" />
   </component>
 </project>
