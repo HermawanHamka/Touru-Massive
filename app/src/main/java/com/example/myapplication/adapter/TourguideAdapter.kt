@@ -21,13 +21,14 @@ class TourguideAdapter(val results: ArrayList<DataTourguide>, val listener: OnAd
         LayoutInflater.from(parent.context).inflate(R.layout.card_item_tourguide, parent, false)
     )
 
+
     override fun getItemCount() = results.size
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val result = results[position]
         holder.view.findViewById<TextView>(R.id.tv_nama).text = result.name
         holder.view.findViewById<TextView>(R.id.hargaT).text = result.price.toString()
         Log.d("TourguideAdapter","resultImage: ${result.photo_tour}")
-        val url = "http://192.168.100.7:3000${result.photo_tour}"
+        val url = "http://188.188.0.225:3000${result.photo_tour}"
         Glide.with(holder.view)
             .load(url)
             .placeholder(R.drawable.grey_background)
@@ -49,4 +50,5 @@ class TourguideAdapter(val results: ArrayList<DataTourguide>, val listener: OnAd
     interface OnAdapterListener {
         fun onClick(results: DataTourguide)
     }
+
 }

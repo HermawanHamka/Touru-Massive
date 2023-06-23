@@ -42,7 +42,7 @@ class DestinasiFragment : Fragment() {
             override fun onClick(results: DataDestination) {
                 startActivity(
                     Intent(context, DetailDestinasi::class.java)
-                        .putExtra("photo", "http://192.168.100.7:3000${results.photo}")
+                        .putExtra("photo", "http://188.188.0.225:3000${results.photo}")
                         .putExtra("title", results.title)
                         .putExtra("desc", results.desc)
                         .putExtra("city", results.city)

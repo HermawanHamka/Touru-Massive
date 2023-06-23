@@ -29,7 +29,7 @@ class HomestayAdapter(val results: ArrayList<DataHomestay>, val listener: OnAdap
         holder.view.findViewById<TextView>(R.id.tv_nama_homestay).text = result.title
         holder.view.findViewById<TextView>(R.id.hargaH).text = result.price_homestay.toString()
         Log.d("HomestayAdapter","resultImage: ${result.photo_homestay}")
-        val url = "http://192.168.100.7:3000${result.photo_homestay}"
+        val url = "http://188.188.0.225:3000${result.photo_homestay}"
         Glide.with(holder.view)
             .load(url)
             .placeholder(R.drawable.grey_background)
