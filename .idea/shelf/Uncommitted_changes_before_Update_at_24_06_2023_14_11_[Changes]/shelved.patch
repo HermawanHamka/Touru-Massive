@@ -1,0 +1,115 @@
+Index: app/src/main/java/com/example/myapplication/adapter/HomeStayAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.myapplication.adapter\r\n\r\nimport android.annotation.SuppressLint\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ImageView\r\nimport android.widget.TextView\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.bumptech.glide.Glide\r\nimport com.example.myapplication.R\r\nimport com.example.myapplication.model.Data\r\nimport com.example.myapplication.model.DataHomestay\r\nimport com.example.myapplication.model.DataTourguide\r\nimport java.util.*\r\nimport kotlin.collections.ArrayList\r\n\r\n\r\nclass HomestayAdapter(val results: ArrayList<DataHomestay>, val listener: OnAdapterListener)\r\n    : RecyclerView.Adapter<HomestayAdapter.ViewHolder> () {\r\n    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (\r\n        LayoutInflater.from(parent.context).inflate(R.layout.card_item_homestay, parent, false)\r\n    )\r\n\r\n    override fun getItemCount() = results.size\r\n    override fun onBindViewHolder(holder: ViewHolder, position: Int) {\r\n        val result = results[position]\r\n        holder.view.findViewById<TextView>(R.id.tv_nama_homestay).text = result.title\r\n        holder.view.findViewById<TextView>(R.id.hargaH).text = result.price_homestay.toString()\r\n        Log.d(\"HomestayAdapter\",\"resultImage: ${result.photo_homestay}\")\r\n        val url = \"http://192.168.100.7:3000${result.photo_homestay}\"\r\n        Glide.with(holder.view)\r\n            .load(url)\r\n            .placeholder(R.drawable.grey_background)\r\n            .error(R.drawable.grey_background)\r\n            .centerCrop()\r\n            .into(holder.view.findViewById(R.id.ivGambarHomestay))\r\n        holder.view.setOnClickListener{\r\n            listener.onClick( result )\r\n        }\r\n    }\r\n    class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)\r\n\r\n    @SuppressLint(\"NotifyDataSetChanged\")\r\n    fun setData(data: ArrayList<DataHomestay>) {\r\n        results.clear()\r\n        results.addAll(data)\r\n        notifyDataSetChanged()\r\n    }\r\n    interface OnAdapterListener {\r\n        fun onClick(results: DataHomestay)\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/adapter/HomeStayAdapter.kt b/app/src/main/java/com/example/myapplication/adapter/HomeStayAdapter.kt
+--- a/app/src/main/java/com/example/myapplication/adapter/HomeStayAdapter.kt	(revision 66b2791178bc552cbd4430f197f64f884967dc8f)
++++ b/app/src/main/java/com/example/myapplication/adapter/HomeStayAdapter.kt	(date 1687587133901)
+@@ -10,44 +10,80 @@
+ import androidx.recyclerview.widget.RecyclerView
+ import com.bumptech.glide.Glide
+ import com.example.myapplication.R
+-import com.example.myapplication.model.Data
+ import com.example.myapplication.model.DataHomestay
+-import com.example.myapplication.model.DataTourguide
+ import java.util.*
+ import kotlin.collections.ArrayList
+ 
++class HomestayAdapter(
++    private var originalData: ArrayList<DataHomestay>,
++    private var filteredData: ArrayList<DataHomestay>,
++    private val listener: OnAdapterListener
++) : RecyclerView.Adapter<HomestayAdapter.ViewHolder>() {
+ 
+-class HomestayAdapter(val results: ArrayList<DataHomestay>, val listener: OnAdapterListener)
+-    : RecyclerView.Adapter<HomestayAdapter.ViewHolder> () {
+-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
+-        LayoutInflater.from(parent.context).inflate(R.layout.card_item_homestay, parent, false)
+-    )
++    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
++        val view = LayoutInflater.from(parent.context)
++            .inflate(R.layout.card_item_homestay, parent, false)
++        return ViewHolder(view)
++    }
+ 
+-    override fun getItemCount() = results.size
++    override fun getItemCount(): Int {
++        return filteredData.size
++    }
++
+     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+-        val result = results[position]
+-        holder.view.findViewById<TextView>(R.id.tv_nama_homestay).text = result.title
+-        holder.view.findViewById<TextView>(R.id.hargaH).text = result.price_homestay.toString()
+-        Log.d("HomestayAdapter","resultImage: ${result.photo_homestay}")
+-        val url = "http://192.168.100.7:3000${result.photo_homestay}"
+-        Glide.with(holder.view)
+-            .load(url)
+-            .placeholder(R.drawable.grey_background)
+-            .error(R.drawable.grey_background)
+-            .centerCrop()
+-            .into(holder.view.findViewById(R.id.ivGambarHomestay))
+-        holder.view.setOnClickListener{
+-            listener.onClick( result )
++        val result = filteredData[position]
++        holder.bind(result)
++    }
++
++    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
++        private val tvNamaHomestay: TextView = itemView.findViewById(R.id.tv_nama_homestay)
++        private val hargaH: TextView = itemView.findViewById(R.id.hargaH)
++        private val ivGambarHomestay: ImageView = itemView.findViewById(R.id.ivGambarHomestay)
++
++        init {
++            itemView.setOnClickListener {
++                val position = adapterPosition
++                if (position != RecyclerView.NO_POSITION) {
++                    val result = filteredData[position]
++                    listener.onClick(result)
++                }
++            }
++        }
++
++        fun bind(data: DataHomestay) {
++            tvNamaHomestay.text = data.title
++            hargaH.text = data.price_homestay.toString()
++            val url = "http://192.168.100.7:3000${data.photo_homestay}"
++            Glide.with(itemView)
++                .load(url)
++                .placeholder(R.drawable.grey_background)
++                .error(R.drawable.grey_background)
++                .centerCrop()
++                .into(ivGambarHomestay)
+         }
+     }
+-    class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)
+ 
+     @SuppressLint("NotifyDataSetChanged")
+     fun setData(data: ArrayList<DataHomestay>) {
+-        results.clear()
+-        results.addAll(data)
++        originalData = data
++        filterData("") // Apply initial filtering
++    }
++
++    fun filterData(query: String) {
++        filteredData.clear()
++        if (query.isEmpty()) {
++            filteredData.addAll(originalData) // Show all data if query is empty
++        } else {
++            val searchQuery = query.toLowerCase(Locale.getDefault())
++            for (item in originalData) {
++                if (item.title?.toLowerCase(Locale.getDefault())?.contains(searchQuery) == true) {
++                    filteredData.add(item)
++                }
++            }
++        }
+         notifyDataSetChanged()
+     }
++
+     interface OnAdapterListener {
+         fun onClick(results: DataHomestay)
+     }
