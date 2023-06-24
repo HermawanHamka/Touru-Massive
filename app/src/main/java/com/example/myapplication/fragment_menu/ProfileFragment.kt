@@ -15,17 +15,22 @@ import com.example.myapplication.BantuanActivity
 import com.example.myapplication.TentangKamiActivity
 import com.example.myapplication.LoginActivity
 import com.example.myapplication.*
+import com.example.myapplication.helper.Constant
 import com.example.myapplication.helper.PreferenceHelper
 
 
 
 class ProfileFragment : Fragment() {
 
+    lateinit var sharedPref : PreferenceHelper
     lateinit var edit:TextView
     lateinit var riwayat:TextView
     lateinit var bantuan:TextView
     lateinit var tentang:TextView
     private lateinit var keluar:TextView
+    lateinit var username : TextView
+    lateinit var email : TextView
+    lateinit var nomor : TextView
 
 
     override fun onCreateView(
@@ -39,6 +44,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPref = PreferenceHelper(requireContext())
         /* get id */
         edit = view.findViewById(R.id.txtEditProfil)
         riwayat  =view.findViewById(R.id.txtRiwayatTransaksi)
@@ -46,6 +52,13 @@ class ProfileFragment : Fragment() {
         tentang = view.findViewById(R.id.txtTentangKami)
         keluar = view.findViewById(R.id.txtKeluar)
 
+        username = view.findViewById(R.id.textUsername)
+        email = view.findViewById(R.id.textEmail)
+        nomor = view.findViewById(R.id.textNohp)
+
+       username.text = sharedPref.getString(Constant.PREF_EMAIL)
+      email.text = sharedPref.getString(Constant.PREF_USERNAME)
+        nomor.text = sharedPref.getString(Constant.PREF_NOMOR)
         /* click the button */
         edit.setOnClickListener {
             val pindahProfil = Intent(activity, DetailProfilActivity::class.java)

@@ -82,9 +82,11 @@ class LoginActivity : AppCompatActivity() {
 
                 val respon = response.body()!!
                 if (!respon.token.isNullOrEmpty()){
-                    sharedPref.put(Constant.PREF_EMAIL, editEmail.text.toString())
-                    sharedPref.put(Constant.PREF_PASSWORD, editPass.text.toString())
                     sharedPref.put(Constant.PREF_IS_LOGIN,true)
+                    sharedPref.setString(Constant.PREF_EMAIL,respon.data?.email ?:"")
+                    sharedPref.setString(Constant.PREF_USERNAME,respon.data?.username ?:"")
+                    sharedPref.setString(Constant.PREF_PASSWORD,respon.data?.password ?:"")
+                    sharedPref.setString(Constant.PREF_NOMOR,respon.data?.nohp ?:"")
                     moveIntent()
                     finish()
                     Toast.makeText(this@LoginActivity, "Selamat datang diTouru", Toast.LENGTH_SHORT).show()

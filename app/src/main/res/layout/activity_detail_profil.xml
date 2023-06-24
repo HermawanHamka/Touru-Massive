@@ -43,6 +43,7 @@
             android:src="@drawable/left_arrow"
             app:tint="@color/white" />
     </RelativeLayout>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="415dp"
@@ -61,8 +62,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout1"
+        app:layout_constraintVertical_bias="0.184" />
 
     <LinearLayout
         android:layout_width="409dp"
@@ -79,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginBottom="5dp"
-            android:text="Nama"
+            android:text="Username"
             android:textColor="@color/black" />
 
         <LinearLayout
@@ -90,13 +91,14 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="346dp">
 
-            <EditText
+                <TextView
+                android:id="@+id/profileNama"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:backgroundTint="@color/white"
                 android:gravity="left"
-                android:text="Yoru Abdillah" />
+              />
         </LinearLayout>
         <LinearLayout
             android:layout_width="409dp"
@@ -123,13 +125,14 @@
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="346dp">
 
-                <EditText
+                <TextView
+                    android:id="@+id/profileEmail"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
                     android:backgroundTint="@color/white"
                     android:gravity="left"
-                    android:text="yoruthebest@gmail.com" />
+                  />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="409dp"
@@ -156,13 +159,14 @@
                     tools:layout_editor_absoluteX="1dp"
                     tools:layout_editor_absoluteY="346dp">
 
-                    <EditText
+                    <TextView
+                        android:id="@+id/profilePass"
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="8dp"
                         android:backgroundTint="@color/white"
                         android:gravity="left"
-                        android:text="***********" />
+                     />
                 </LinearLayout>
 
                 <LinearLayout
@@ -190,13 +194,14 @@
                         tools:layout_editor_absoluteX="1dp"
                         tools:layout_editor_absoluteY="346dp">
 
-                        <EditText
+                        <TextView
+                            android:id="@+id/profileNo"
                             android:layout_width="350dp"
                             android:layout_height="50dp"
                             android:layout_marginStart="8dp"
                             android:backgroundTint="@color/white"
                             android:gravity="left"
-                            android:text="08123456789" />
+                          />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

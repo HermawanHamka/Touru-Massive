@@ -7,10 +7,10 @@ import com.example.myapplication.fragment_menu.ProfileFragment
 
 class PreferenceHelper(context: Context) {
 
-
     private val PREF_NAME = "sharedPreference123"
     val sharedPref : SharedPreferences
     val editor : SharedPreferences.Editor
+    val login = "login"
 
     init {
         sharedPref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -20,12 +20,6 @@ class PreferenceHelper(context: Context) {
     fun put(key: String, value: String){
         editor.putString(key,value)
             .apply()
-    }
-
-
-
-    fun getString(key: String): String?{
-        return sharedPref.getString(key,null)
     }
 
     fun put(key: String, value: Boolean){
@@ -40,5 +34,17 @@ class PreferenceHelper(context: Context) {
     fun clear(){
         editor.clear()
             .apply()
+    }
+
+    fun getString(key: String): String{
+        return sharedPref.getString(key,"")!!
+    }
+
+//    fun setString(key: String?){
+//        sharedPref.edit().putString(login,key).apply()
+//    }
+
+    fun setString(key: String?, value: String) {
+        sharedPref.edit().putString(key, value).apply()
     }
 }

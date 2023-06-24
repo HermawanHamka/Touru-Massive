@@ -15,8 +15,8 @@ data class Data(
     val email: String? = "",
     @SerializedName("_id")
     val id: String? = "",
-    @SerializedName("ktp")
-    val ktp: String? = "",
+//    @SerializedName("ktp")
+//    val ktp: String? = "",
     @SerializedName("nohp")
     val nohp: String? = "",
     @SerializedName("password")

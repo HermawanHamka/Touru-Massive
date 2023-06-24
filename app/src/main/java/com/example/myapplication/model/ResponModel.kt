@@ -10,7 +10,7 @@ import android.os.Parcelable
 @Parcelize
 data class ResponModel(
     @SerializedName("data")
-    val `data`: Data? = Data(),
+    val `data`: Data = Data(),
     @SerializedName("role")
     val role: String? = "",
     @SerializedName("token")

@@ -7,6 +7,7 @@ class Constant {
         val PREF_EMAIL    = "PREF_EMAIL"
         val PREF_PASSWORD = "PREF_PASSWORD"
         val PREF_USERNAME = "PREF_USERNAME"
+        val PREF_NOMOR = "PREF_NOMOR"
 
     }
 }

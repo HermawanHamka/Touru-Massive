@@ -10,7 +10,6 @@ import retrofit2.http.POST
 interface ApiService {
     @FormUrlEncoded
     @POST("register")
-    @Multipart
     fun register(
         @Field("email")email :String,
         @Field("password")password :String,

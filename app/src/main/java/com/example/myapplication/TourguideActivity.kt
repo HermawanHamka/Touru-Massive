@@ -7,13 +7,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
-import android.widget.LinearLayout
 import android.widget.ProgressBar
-import androidx.recyclerview.widget.GridLayoutManager
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.adapter.HomestayAdapter
 import com.example.myapplication.adapter.TourguideAdapter
-import com.example.myapplication.retrofit_destinasi.ApiService
 import com.example.myapplication.model.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,10 +22,27 @@ class TourguideActivity : AppCompatActivity() {
     val TAG : String = "TourguideActivity"
 
     private lateinit var tourguideAdapter: TourguideAdapter
+    private lateinit var searchView: SearchView
+    private val originalData: ArrayList<DataTourguide> = ArrayList()
+    private val filteredData: ArrayList<DataTourguide> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tour_guide)
+
+        searchView = findViewById(R.id.search_view)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                tourguideAdapter.filterData(query ?: "")
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+               tourguideAdapter.filterData(newText ?: "")
+                return true
+            }
+        })
     }
 
     override fun onStart() {
@@ -38,7 +54,7 @@ class TourguideActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val recyclerView by lazy { findViewById<RecyclerView>(R.id.rv_heroes_tourguide) }
-        tourguideAdapter = TourguideAdapter(arrayListOf(), object : TourguideAdapter.OnAdapterListener {
+        tourguideAdapter = TourguideAdapter(originalData, filteredData, object : TourguideAdapter.OnAdapterListener {
                 override fun onClick(results: DataTourguide) {
                     startActivity(
                         Intent(applicationContext, DetailTourguide::class.java)

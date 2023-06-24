@@ -58,7 +58,8 @@ class HomeFragment : Fragment() {
         tourguide = view.findViewById(R.id.layoutTourguide)
         halo = view.findViewById(R.id.textView)
         sharedPref = PreferenceHelper(requireContext())
-        val email = sharedPref.getString(Constant.PREF_EMAIL)
+
+        val email = sharedPref.getString(Constant.PREF_USERNAME)
         halo.text = "Halo " + (email ?: "")
 
         buttonHomestay.setOnClickListener{
@@ -80,6 +81,7 @@ class HomeFragment : Fragment() {
             urlIntent.data = Uri.parse("http://192.168.0.105:3000/tours")
             requireActivity().startActivity(urlIntent)
         }
+
 
 
     }
