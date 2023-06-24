@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiService {
 
-    val BASE_URL: String = "http://188.188.0.225:4000/api/v1/"
+    val BASE_URL: String = "http://192.168.100.7:4000/api/v1/"
     val endPoint: ApiEndPoint
         get() {
 
