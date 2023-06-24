@@ -10,44 +10,80 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
-import com.example.myapplication.model.Data
 import com.example.myapplication.model.DataHomestay
-import com.example.myapplication.model.DataTourguide
 import java.util.*
 import kotlin.collections.ArrayList
 
+class HomestayAdapter(
+    private var originalData: ArrayList<DataHomestay>,
+    private var filteredData: ArrayList<DataHomestay>,
+    private val listener: OnAdapterListener
+) : RecyclerView.Adapter<HomestayAdapter.ViewHolder>() {
 
-class HomestayAdapter(val results: ArrayList<DataHomestay>, val listener: OnAdapterListener)
-    : RecyclerView.Adapter<HomestayAdapter.ViewHolder> () {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.card_item_homestay, parent, false)
-    )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.card_item_homestay, parent, false)
+        return ViewHolder(view)
+    }
 
-    override fun getItemCount() = results.size
+    override fun getItemCount(): Int {
+        return filteredData.size
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val result = results[position]
-        holder.view.findViewById<TextView>(R.id.tv_nama_homestay).text = result.title
-        holder.view.findViewById<TextView>(R.id.hargaH).text = result.price_homestay.toString()
-        Log.d("HomestayAdapter","resultImage: ${result.photo_homestay}")
-        val url = "http://188.188.0.225:3000${result.photo_homestay}"
-        Glide.with(holder.view)
-            .load(url)
-            .placeholder(R.drawable.grey_background)
-            .error(R.drawable.grey_background)
-            .centerCrop()
-            .into(holder.view.findViewById(R.id.ivGambarHomestay))
-        holder.view.setOnClickListener{
-            listener.onClick( result )
+        val result = filteredData[position]
+        holder.bind(result)
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val tvNamaHomestay: TextView = itemView.findViewById(R.id.tv_nama_homestay)
+        private val hargaH: TextView = itemView.findViewById(R.id.hargaH)
+        private val ivGambarHomestay: ImageView = itemView.findViewById(R.id.ivGambarHomestay)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val result = filteredData[position]
+                    listener.onClick(result)
+                }
+            }
+        }
+
+        fun bind(data: DataHomestay) {
+            tvNamaHomestay.text = data.title
+            hargaH.text = data.price_homestay.toString()
+            val url = "http://192.168.100.7:3000${data.photo_homestay}"
+            Glide.with(itemView)
+                .load(url)
+                .placeholder(R.drawable.grey_background)
+                .error(R.drawable.grey_background)
+                .centerCrop()
+                .into(ivGambarHomestay)
         }
     }
-    class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)
 
     @SuppressLint("NotifyDataSetChanged")
     fun setData(data: ArrayList<DataHomestay>) {
-        results.clear()
-        results.addAll(data)
+        originalData = data
+        filterData("") // Apply initial filtering
+    }
+
+    fun filterData(query: String) {
+        filteredData.clear()
+        if (query.isEmpty()) {
+            filteredData.addAll(originalData) // Show all data if query is empty
+        } else {
+            val searchQuery = query.toLowerCase(Locale.getDefault())
+            for (item in originalData) {
+                if (item.title?.toLowerCase(Locale.getDefault())?.contains(searchQuery) == true) {
+                    filteredData.add(item)
+                }
+            }
+        }
         notifyDataSetChanged()
     }
+
     interface OnAdapterListener {
         fun onClick(results: DataHomestay)
     }
