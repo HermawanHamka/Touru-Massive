@@ -19,7 +19,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TourguideActivity : AppCompatActivity() {
-    val TAG : String = "TourguideActivity"
+    val TAG: String = "TourguideActivity"
 
     private lateinit var tourguideAdapter: TourguideAdapter
     private lateinit var searchView: SearchView
@@ -45,6 +45,7 @@ class TourguideActivity : AppCompatActivity() {
         })
     }
 
+
     override fun onStart() {
         super.onStart()
         setupRecyclerView()
@@ -66,6 +67,9 @@ class TourguideActivity : AppCompatActivity() {
                     )
                 }
             })
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing) // Ganti dengan dimensi spacing yang diinginkan
+
+        recyclerView.addItemDecoration(spacing(spacingInPixels))
 
         val backButton: ImageButton = findViewById<ImageButton>(R.id.kembali)
         backButton.setOnClickListener {

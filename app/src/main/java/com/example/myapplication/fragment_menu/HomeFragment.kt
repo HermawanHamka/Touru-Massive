@@ -73,12 +73,12 @@ class HomeFragment : Fragment() {
         }
         homestay.setOnClickListener {
             val urlIntent = Intent(Intent.ACTION_VIEW)
-            urlIntent.data = Uri.parse("http://192.168.0.105:3000/homestays")
+            urlIntent.data = Uri.parse("http://188.188.0.225:3000/homestays")
             requireActivity().startActivity(urlIntent)
         }
         tourguide.setOnClickListener {
             val urlIntent = Intent(Intent.ACTION_VIEW)
-            urlIntent.data = Uri.parse("http://192.168.0.105:3000/tours")
+            urlIntent.data = Uri.parse("http://188.188.0.225:3000/tours")
             requireActivity().startActivity(urlIntent)
         }
 
