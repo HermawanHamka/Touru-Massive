@@ -66,6 +66,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="15dp"
                 android:text="Terdaftar" />
 
             <TextView
@@ -73,6 +75,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
                 android:textColor="@color/black"
                 />
 
@@ -89,6 +93,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="15dp"
                 android:text="Baru" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -103,6 +109,8 @@
                     android:layout_height="wrap_content"
                     android:background="@color/grey"
                     android:hint="Username"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="18dp"
                     android:textColor="@color/black" />
 
             </com.google.android.material.textfield.TextInputLayout>
