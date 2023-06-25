@@ -8,6 +8,7 @@ import android.provider.ContactsContract.Profile
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.FragmentNavigator
@@ -37,14 +38,28 @@ class DetailProfilActivity : AppCompatActivity() {
             finish()
         }
         val emailProfile = findViewById<TextView>(R.id.profileEmail)
-        val passProfile = findViewById<TextView>(R.id.profilePass)
+        val lahirProfile = findViewById<TextView>(R.id.profileLahir)
         val nameProfile = findViewById<TextView>(R.id.profileNama)
         val noProfile = findViewById<TextView>(R.id.profileNo)
+        val kataSandi = findViewById<LinearLayout>(R.id.linearLayoutKataSandi)
+        val username = findViewById<LinearLayout>(R.id.linearLayoutUsername)
 
         emailProfile.text = sharedPref.getString(Constant.PREF_EMAIL)
-        passProfile.text = sharedPref.getString(Constant.PREF_PASSWORD)
         nameProfile.text = sharedPref.getString(Constant.PREF_USERNAME)
+        lahirProfile.text = sharedPref.getString(Constant.PREF_TGLLAHIR)
         noProfile.text = sharedPref.getString(Constant.PREF_NOMOR)
+
+        kataSandi.setOnClickListener {
+            val pindah = Intent(this,EditPasswordActivity::class.java)
+            startActivity(pindah)
+        }
+
+        username.setOnClickListener {
+            val pindahUsername = Intent(this,EditUsernameActivity::class.java)
+            startActivity(pindahUsername)
+        }
+
+
         }
 
 

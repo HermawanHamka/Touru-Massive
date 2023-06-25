@@ -23,10 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="Halo, Kobo!"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -213,7 +212,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="Mendaftarkan layanan Homestay"
                         android:textColor="@color/black"
-                        android:textSize="8dp" />
+                        android:textSize="9dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -254,7 +253,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="Mendaftarkan layanan TourGuide"
                         android:textColor="@color/black"
-                        android:textSize="8dp" />
+                        android:textSize="9dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

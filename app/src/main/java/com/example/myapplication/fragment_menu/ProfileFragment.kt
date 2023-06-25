@@ -56,8 +56,8 @@ class ProfileFragment : Fragment() {
         email = view.findViewById(R.id.textEmail)
         nomor = view.findViewById(R.id.textNohp)
 
-       username.text = sharedPref.getString(Constant.PREF_EMAIL)
-      email.text = sharedPref.getString(Constant.PREF_USERNAME)
+       username.text = sharedPref.getString(Constant.PREF_USERNAME)
+      email.text = sharedPref.getString(Constant.PREF_EMAIL)
         nomor.text = sharedPref.getString(Constant.PREF_NOMOR)
         /* click the button */
         edit.setOnClickListener {

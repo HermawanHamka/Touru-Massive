@@ -86,10 +86,11 @@ class LoginActivity : AppCompatActivity() {
                     sharedPref.setString(Constant.PREF_EMAIL,respon.data?.email ?:"")
                     sharedPref.setString(Constant.PREF_USERNAME,respon.data?.username ?:"")
                     sharedPref.setString(Constant.PREF_PASSWORD,respon.data?.password ?:"")
+                    sharedPref.setString(Constant.PREF_TGLLAHIR,respon.data?.tgllahir ?:"")
                     sharedPref.setString(Constant.PREF_NOMOR,respon.data?.nohp ?:"")
                     moveIntent()
                     finish()
-                    Toast.makeText(this@LoginActivity, "Selamat datang diTouru", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Selamat Datang di Touru", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this@LoginActivity, "Error:"+respon.data, Toast.LENGTH_SHORT).show()
                 }
