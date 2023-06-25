@@ -29,7 +29,7 @@
             android:layout_height="116dp"
             android:backgroundTint="@color/black"
             android:elevation="5dp"
-            android:src="@drawable/editprofilfoto" />
+            android:src="@drawable/default_profile" />
 
         <LinearLayout
             android:layout_width="273dp"
