@@ -22,7 +22,7 @@ class DestinasiAdapter(val results: ArrayList<DataDestination>, val listener: On
         val result = results[position]
         holder.view.findViewById<TextView>(R.id.namaDestinasi).text = result.title
         Log.d("DestinasiAdapter","resultImage: ${result.photo}")
-        val url = "http://192.168.100.7:3000${result.photo}"
+        val url = "http://192.168.0.103:3000${result.photo}"
         Glide.with(holder.view)
             .load(url)
             .placeholder(R.drawable.grey_background)

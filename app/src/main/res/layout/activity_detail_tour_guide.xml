@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     android:background="@color/grey"
     tools:context=".DetailTourguide">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
@@ -67,21 +70,25 @@
         app:layout_constraintVertical_bias="0.087" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="409dp"
         android:layout_height="384dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
-            android:id="@+id/nama_tour"
+            android:id="@+id/name_tour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20sp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="nama"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -93,10 +100,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
             android:text="Location"
             android:textAlignment="center"
             android:textColor="#3761ED"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -129,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Tentang saya"
             android:textColor="@color/black"
             android:textStyle="bold" />
@@ -138,11 +147,13 @@
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="KJBAKJBSDKABSD"
-            android:textSize="20sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
+
             android:id="@+id/priceTour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -151,21 +162,44 @@
             android:textColor="@color/black"
             android:textStyle="bold" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/btnPesanTG"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_onboarding"
+            android:text="Pesan TourGuide"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPesanTG"
-        android:layout_width="170dp"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/btn_onboarding"
-        android:text="Pesan TourGuide"
-        android:textColor="@color/white"
-        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/editprofilfoto"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0sp"
+            android:text="TextView" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

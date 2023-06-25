@@ -1,7 +1,6 @@
 package com.example.myapplication.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,9 @@ class HomestayAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvNamaHomestay: TextView = itemView.findViewById(R.id.tv_nama_homestay)
         private val hargaH: TextView = itemView.findViewById(R.id.hargaH)
+        private val cityH: TextView = itemView.findViewById(R.id.cityH)
         private val ivGambarHomestay: ImageView = itemView.findViewById(R.id.ivGambarHomestay)
+
 
         init {
             itemView.setOnClickListener {
@@ -52,8 +53,9 @@ class HomestayAdapter(
 
         fun bind(data: DataHomestay) {
             tvNamaHomestay.text = data.title
+            cityH.text = data.city
             hargaH.text = data.price_homestay.toString()
-            val url = "http://192.168.100.7:3000${data.photo_homestay}"
+            val url = "http://192.168.0.102:3000${data.photo_homestay}"
             Glide.with(itemView)
                 .load(url)
                 .placeholder(R.drawable.grey_background)
@@ -74,9 +76,13 @@ class HomestayAdapter(
         if (query.isEmpty()) {
             filteredData.addAll(originalData) // Show all data if query is empty
         } else {
-            val searchQuery = query.toLowerCase(Locale.getDefault())
+            val searchQuery = query.lowercase(Locale.getDefault())
             for (item in originalData) {
-                if (item.title?.toLowerCase(Locale.getDefault())?.contains(searchQuery) == true) {
+                if (item.title?.lowercase(Locale.getDefault())?.contains(searchQuery) == true) {
+                    filteredData.add(item)
+                } else if (item.price_homestay.toString().contains(searchQuery)){
+                    filteredData.add(item)
+                } else if (item.city?.lowercase(Locale.getDefault())?.contains(searchQuery) == true) {
                     filteredData.add(item)
                 }
             }

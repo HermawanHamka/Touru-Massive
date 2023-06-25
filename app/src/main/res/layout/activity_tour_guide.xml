@@ -40,22 +40,24 @@
         android:background="@drawable/searchview_backgound"
         android:iconifiedByDefault="false"
         android:queryBackground="@android:color/transparent"
-        android:queryHint="Enter user name"
+        android:queryHint="Cari disini"
         app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.094"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.094" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_heroes_tourguide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
         tools:listitem="@layout/card_item_tourguide" />
 
     <ProgressBar

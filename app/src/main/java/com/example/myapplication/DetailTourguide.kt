@@ -20,7 +20,7 @@ class DetailTourguide : AppCompatActivity() {
             .error(R.drawable.grey_background)
             .into(findViewById(R.id.photoTourguide))
 
-        val namaTourguide = findViewById<TextView>(R.id.nama_tour)
+        val namaTourguide = findViewById<TextView>(R.id.name_tour)
         namaTourguide.text = intent.getStringExtra("name_tour")
 
         val lokasiTourguide = findViewById<TextView>(R.id.lokasiTour)

@@ -40,6 +40,7 @@ class TourguideAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvNamaTourguide: TextView = itemView.findViewById(R.id.tv_nama)
         private val hargaT: TextView = itemView.findViewById(R.id.hargaT)
+        private val cityT: TextView = itemView.findViewById(R.id.cityT)
         private val ivGambarTourguide: ImageView = itemView.findViewById(R.id.ivGambar)
 
         init {
@@ -54,8 +55,9 @@ class TourguideAdapter(
 
         fun bind(data: DataTourguide) {
             tvNamaTourguide.text = data.title
+            cityT.text = data.city
             hargaT.text = data.price.toString()
-            val url = "http://192.168.100.7:3000${data.photo_tour}"
+            val url = "http://192.168.0.103:3000${data.photo_tour}"
             Glide.with(itemView)
                 .load(url)
                 .placeholder(R.drawable.grey_background)
@@ -75,9 +77,13 @@ class TourguideAdapter(
         if (query.isEmpty()) {
             filteredData.addAll(originalData) // Show all data if query is empty
         } else {
-            val searchQuery = query.toLowerCase(Locale.getDefault())
+            val searchQuery = query.lowercase(Locale.getDefault())
             for (item in originalData) {
-                if (item.title?.toLowerCase(Locale.getDefault())?.contains(searchQuery) == true) {
+                if (item.title?.lowercase(Locale.getDefault())?.contains(searchQuery) == true) {
+                    filteredData.add(item)
+                } else if (item.price.toString().contains(searchQuery)){
+                    filteredData.add(item)
+                } else if (item.city?.lowercase(Locale.getDefault())?.contains(searchQuery) == true) {
                     filteredData.add(item)
                 }
             }

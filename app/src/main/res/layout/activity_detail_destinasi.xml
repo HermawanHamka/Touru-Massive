@@ -31,11 +31,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:fontFamily="@font/poppins_extrabold"
         android:id="@+id/tv_item_nama_destinasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_extrabold"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -45,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_item_fotodestinasi" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:justificationMode="inter_word"
         android:id="@+id/tv_item_deskripsi_destinasi"
         android:layout_width="0dp"
@@ -61,12 +62,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_item_city_destinasi" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/tv_item_city_destinasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -74,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_item_nama_destinasi" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/tv_localprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,8 +92,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="TextView"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_localprice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

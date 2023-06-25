@@ -18,7 +18,7 @@
             android:layout_height="60dp"
             android:background="@drawable/pp"
             android:layout_marginRight="20dp">
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/ivGambar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,46 +39,51 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:text="Id Laundry"
                 android:visibility="gone"/>
+
             <TextView
+                android:fontFamily="@font/poppins_semibold"
                 android:id="@+id/tv_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Nama " android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="Nama"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:maxLength="25"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/hargaT"
-                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-                app:layout_constraintLeft_toRightOf="@+id/satu"
-                android:text="harga" android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:text="harga"
+                android:textColor="@color/black"
                 android:textSize="15sp"
-                />
+                app:layout_constraintLeft_toRightOf="@+id/satu"
+                app:layout_constraintTop_toBottomOf="@+id/cityT" />
+
             <TextView
                 android:id="@+id/satu"
-                android:text="Rp."
-                android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-                app:layout_constraintLeft_toLeftOf="@+id/tv_nama"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Rp."
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_nama"
+                app:layout_constraintTop_toBottomOf="@+id/cityT" />
+
             <TextView
                 android:id="@+id/dua"
-                android:text="/Hari"
-                android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-                app:layout_constraintLeft_toRightOf="@id/hargaT"
-                app:layout_constraintBottom_toBottomOf="@id/hargaT"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="/Hari"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/hargaT"
+                app:layout_constraintLeft_toRightOf="@id/hargaT"
+                app:layout_constraintTop_toBottomOf="@+id/cityT" />
             <ImageView
                 android:id="@+id/masuk"
                 android:background="@drawable/masuk"
@@ -105,7 +110,8 @@
                     android:layout_height="wrap_content"
                     />
                 <TextView
-                    android:id="@+id/rating"
+                    android:fontFamily="@font/poppins_regular"
+                    android:id="@+id/ratingH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.0"
@@ -115,6 +121,142 @@
 
             </RelativeLayout>
 
+            <TextView
+                android:id="@+id/cityT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Kota"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@drawable/pp"-->
+<!--            android:layout_marginRight="20dp">-->
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/ivGambar"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#FFFAFA"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:id="@+id/tv_id"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:text="Id Laundry"-->
+<!--                android:visibility="gone"/>-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:id="@+id/tv_nama"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Nama "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                android:maxLength="25"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:id="@+id/hargaT"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="harga"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintLeft_toRightOf="@+id/satu"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cityT" />-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:id="@+id/satu"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Rp."-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintLeft_toLeftOf="@+id/tv_nama"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cityT" />-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:id="@+id/dua"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="/Hari"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/hargaT"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/hargaT"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/cityT" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/masuk"-->
+<!--                android:background="@drawable/masuk"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toTopOf="@id/tv_nama"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintLeft_toRightOf="@+id/tv_nama"-->
+<!--                />-->
+<!--            <RelativeLayout-->
+<!--                android:background="@drawable/buton"-->
+<!--                android:layout_width="57dp"-->
+<!--                android:layout_height="29dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/masuk"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:layout_constraintLeft_toRightOf="@+id/hargaT"-->
+<!--                >-->
+<!--                <ImageView-->
+<!--                    android:background="@drawable/bintang"-->
+<!--                    android:layout_marginTop="7dp"-->
+<!--                    android:layout_marginLeft="4dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    />-->
+<!--                <TextView-->
+<!--                    android:fontFamily="@font/poppins_regular"-->
+<!--                    android:id="@+id/ratingT"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="0.0"-->
+<!--                    android:layout_marginLeft="25dp"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:id="@+id/cityT"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Kota" android:textColor="@color/black"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_nama" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </LinearLayout>-->
 </androidx.cardview.widget.CardView>

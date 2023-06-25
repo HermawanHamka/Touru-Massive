@@ -39,7 +39,7 @@ class TourguideActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-               tourguideAdapter.filterData(newText ?: "")
+                tourguideAdapter.filterData(newText ?: "")
                 return true
             }
         })
@@ -59,17 +59,14 @@ class TourguideActivity : AppCompatActivity() {
                 override fun onClick(results: DataTourguide) {
                     startActivity(
                         Intent(applicationContext, DetailTourguide::class.java)
-                            .putExtra("name_tour", results.name)
+                            .putExtra("name_tour", results.title)
                             .putExtra("price_tour", results.price.toString())
                             .putExtra("location_tour", results.city)
                             .putExtra("desc_tour", results.desc)
-                            .putExtra("photo_tour", "http://192.168.100.7:3000${results.photo_tour}")
+                            .putExtra("photo_tour", "http://192.168.0.103:3000${results.photo_tour}")
                     )
                 }
             })
-        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing) // Ganti dengan dimensi spacing yang diinginkan
-
-        recyclerView.addItemDecoration(spacing(spacingInPixels))
 
         val backButton: ImageButton = findViewById<ImageButton>(R.id.kembali)
         backButton.setOnClickListener {

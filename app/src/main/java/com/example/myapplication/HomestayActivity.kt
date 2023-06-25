@@ -21,7 +21,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomestayActivity : AppCompatActivity() {
-
     private val TAG: String = "HomestayActivity"
 
     private lateinit var homestayAdapter: HomestayAdapter
@@ -64,7 +63,7 @@ class HomestayActivity : AppCompatActivity() {
                         .putExtra("location_homestay", results.city)
                         .putExtra("desc_homestay", results.desc)
                         .putExtra("price_homestay", results.price_homestay.toString())
-                        .putExtra("photo_homestay", "http://192.168.100.7:3000${results.photo_homestay}")
+                        .putExtra("photo_homestay", "http://192.168.0.102:3000${results.photo_homestay}")
                 )
             }
         })
@@ -78,8 +77,8 @@ class HomestayActivity : AppCompatActivity() {
         }
 
         recyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = homestayAdapter
+            recyclerView.layoutManager = LinearLayoutManager(context)
+            recyclerView.adapter = homestayAdapter
         }
     }
 
@@ -91,7 +90,8 @@ class HomestayActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<HomestayModel>, response: Response<HomestayModel>) {
                     progressBar.visibility = View.GONE
                     if (response.isSuccessful) {
-                        response.body()?.let { showData(it) }
+//                        response.body()?.let { showData(it) }
+                        if(response.body()!= null) showData(response.body()!!)
                     }
                 }
 

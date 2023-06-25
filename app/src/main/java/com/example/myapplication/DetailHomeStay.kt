@@ -1,9 +1,11 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
@@ -33,6 +35,14 @@ class DetailHomestay : AppCompatActivity() {
         btnPesanHomestay.setOnClickListener {
             val pindahPesanHomestay = Intent(this, TransaksiActivity::class.java)
             startActivity(pindahPesanHomestay)
+        }
+
+        val backButton: ImageButton = findViewById(R.id.tombol_kembali)
+        backButton.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("checkbox_status", true)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
         }
     }
 }
