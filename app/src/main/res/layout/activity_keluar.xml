@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="50sp"
-                android:textColor="@color/purple_700"
+                android:textColor="@color/blue"
                 android:textStyle="bold"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Tour'u"
@@ -52,7 +52,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnYes"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
@@ -62,9 +62,10 @@
                     android:padding="10dp"
                     android:layout_margin="10dp"
                     android:text="Iya"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:background="@drawable/bottom_background"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnNo"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
@@ -75,7 +76,8 @@
                     android:text="No"
                     android:backgroundTint="#A4A4A4"
                     android:layout_margin="10dp"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:background="@drawable/bottom_background"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
