@@ -44,9 +44,9 @@ data class DataDestination(
     @SerializedName("_id")
     val id: String? = "",
     @SerializedName("inter_price")
-    val interPrice: Int? = 0,
+    val inter_Price: Int? = 0,
     @SerializedName("local_price")
-    val localPrice: Int? = 0,
+    val local_Price: Int? = 0,
     @SerializedName("photo")
     val photo: String? = "",
     @SerializedName("title")

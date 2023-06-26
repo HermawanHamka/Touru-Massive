@@ -26,6 +26,9 @@ class DetailTourguide : AppCompatActivity() {
         val lokasiTourguide = findViewById<TextView>(R.id.lokasiTour)
         lokasiTourguide.text = intent.getStringExtra("location_tour")
 
+        val bahasaTourguide = findViewById<TextView>(R.id.bahasaTourguide)
+        bahasaTourguide.text = intent.getStringExtra("lang_tour")
+
         val hargaTourguide = findViewById<TextView>(R.id.priceTour)
         hargaTourguide.text = intent.getStringExtra("price_tour")
 

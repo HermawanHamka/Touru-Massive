@@ -94,5 +94,4 @@ class TourguideAdapter(
     interface OnAdapterListener {
         fun onClick(results: DataTourguide)
     }
-
-    }
+}

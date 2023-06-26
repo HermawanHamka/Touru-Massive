@@ -29,9 +29,10 @@ class DetailDestinasi : AppCompatActivity() {
         deskripsiDestinasi.text = intent.getStringExtra("desc")
 
         val hargaLokal = findViewById<TextView>(R.id.tv_localprice)
-        hargaLokal.text = intent.getStringExtra("localprice")
+        hargaLokal.text = intent.getStringExtra("local_price")
+
         val hargaInter = findViewById<TextView>(R.id.tv_interprice)
-        hargaInter.text = intent.getStringExtra("localprice")
+        hargaInter.text = intent.getStringExtra("inter_price")
 
         val backButton: ImageButton = findViewById<ImageButton>(R.id.tombol_kembali)
         backButton.setOnClickListener {

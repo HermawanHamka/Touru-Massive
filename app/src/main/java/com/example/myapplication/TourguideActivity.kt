@@ -63,6 +63,7 @@ class TourguideActivity : AppCompatActivity() {
                             .putExtra("price_tour", results.price.toString())
                             .putExtra("location_tour", results.city)
                             .putExtra("desc_tour", results.desc)
+                            .putExtra("lang_tour", results.language)
                             .putExtra("photo_tour", "http://192.168.0.103:3000${results.photo_tour}")
                     )
                 }

@@ -46,8 +46,8 @@ class DestinasiFragment : Fragment() {
                         .putExtra("title", results.title)
                         .putExtra("desc", results.desc)
                         .putExtra("city", results.city)
-                        .putExtra("localprice", "Harga masuk domestik : ${results.localPrice}")
-                        .putExtra("interprice", "Harga masuk mancanegara : ${results.interPrice}")
+                        .putExtra("local_price", results.local_Price.toString())
+                        .putExtra("inter_price", results.inter_Price.toString())
                 )
             }
 
