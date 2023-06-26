@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20sp"
+                android:layout_marginTop="24sp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="nama"
                 android:textAlignment="center"

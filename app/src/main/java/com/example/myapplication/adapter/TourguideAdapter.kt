@@ -57,7 +57,7 @@ class TourguideAdapter(
             tvNamaTourguide.text = data.title
             cityT.text = data.city
             hargaT.text = data.price.toString()
-            val url = "http://192.168.100.7:3000${data.photo_tour}"
+            val url = "http://192.168.0.103:3000${data.photo_tour}"
             Glide.with(itemView)
                 .load(url)
                 .placeholder(R.drawable.grey_background)

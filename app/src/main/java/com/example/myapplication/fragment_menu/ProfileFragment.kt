@@ -1,5 +1,6 @@
 package com.example.myapplication.fragment_menu
 
+import android.app.Dialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -77,6 +78,9 @@ class ProfileFragment : Fragment() {
             startActivity(pindahTentang)
         }
         keluar.setOnClickListener {
+//            val warning = layoutInflater.inflate(R.layout.activity_keluar, null)
+//            val popupWarning = Dialog(this.requireContext())
+//            popupWarning.setContentView()
             val pindahHome = Intent(activity, KeluarActivity::class.java)
             startActivity(pindahHome)
         }
