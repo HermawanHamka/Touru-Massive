@@ -76,7 +76,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:padding="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:textSize="18dp"
                 android:textColor="@color/black"
@@ -99,30 +100,25 @@
                 android:textSize="15dp"
                 android:text="Baru" />
 
-            <com.google.android.material.textfield.TextInputLayout
+
+            <EditText
+                android:id="@+id/ubahUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:layout_marginTop="10dp"
-                >
+                android:textSize="18sp"
+                android:hint="Username"
+                 />
 
-                <EditText
-                    android:id="@+id/editPassBaru"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/grey"
-                    android:hint="Username"
-                    android:padding="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="18dp"
-                    android:textColor="@color/black" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
 
         <Button
-            android:id="@+id/btnPerbarui"
+            android:id="@+id/btnUbahUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
