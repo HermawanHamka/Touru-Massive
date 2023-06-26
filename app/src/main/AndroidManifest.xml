@@ -59,6 +59,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".FeedbackActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".HomestayActivity"
             android:exported="false" />
         <activity

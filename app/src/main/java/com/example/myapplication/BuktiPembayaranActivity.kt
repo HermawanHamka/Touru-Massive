@@ -44,6 +44,8 @@ class BuktiPembayaranActivity : AppCompatActivity() {
                 // Perform the upload process using the file path
                 // Replace this with your actual upload implementation
                 uploadFile(filePath!!)
+                val pindah = Intent(this,FeedbackActivity::class.java)
+                startActivity(pindah)
             } else {
                 Toast.makeText(this, "Please choose a file first", Toast.LENGTH_SHORT).show()
             }

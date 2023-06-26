@@ -29,7 +29,7 @@ class FeedbackActivity : AppCompatActivity() {
         }
         button.setOnClickListener {
             val message = ratingBar.rating.toString()
-            Toast.makeText(this@FeedbackActivity, "Rating Is :" + message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Rating Is :" + message, Toast.LENGTH_SHORT).show()
         }
     }
 
