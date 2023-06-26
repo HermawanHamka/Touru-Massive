@@ -11,7 +11,7 @@ class TentangKamiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tentang_kami)
 
-        val backButton: ImageView = findViewById<ImageView>(R.id.imgBackUbahSandi)
+        val backButton: ImageView = findViewById<ImageView>(R.id.imgBackTentangKami)
         backButton.setOnClickListener {
             val intent = Intent()
             intent.putExtra("checkbox_status", true)
