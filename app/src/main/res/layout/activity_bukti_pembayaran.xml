@@ -95,6 +95,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/btnChooseFile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -124,7 +125,9 @@
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
+
         </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnUnggah"
             android:layout_width="260dp"

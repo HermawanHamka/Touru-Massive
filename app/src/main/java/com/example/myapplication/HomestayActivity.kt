@@ -63,7 +63,7 @@ class HomestayActivity : AppCompatActivity() {
                         .putExtra("location_homestay", results.city)
                         .putExtra("desc_homestay", results.desc)
                         .putExtra("price_homestay", results.price_homestay.toString())
-                        .putExtra("photo_homestay", "http://192.168.0.102:3000${results.photo_homestay}")
+                        .putExtra("photo_homestay", "http://192.168.100.7:3000${results.photo_homestay}")
                 )
             }
         })

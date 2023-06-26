@@ -55,7 +55,7 @@ class HomestayAdapter(
             tvNamaHomestay.text = data.title
             cityH.text = data.city
             hargaH.text = data.price_homestay.toString()
-            val url = "http://192.168.0.102:3000${data.photo_homestay}"
+            val url = "http://192.168.100.7:3000${data.photo_homestay}"
             Glide.with(itemView)
                 .load(url)
                 .placeholder(R.drawable.grey_background)
