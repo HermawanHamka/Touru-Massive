@@ -49,7 +49,7 @@ class DestinasiFragment : Fragment() {
             override fun onClick(results: DataDestination) {
                 startActivity(
                     Intent(context, DetailDestinasi::class.java)
-                        .putExtra("photo", "http://192.168.100.7:3000${results.photo}")
+                        .putExtra("photo_destinasi", "http://192.168.0.103:3000${results.photo}")
                         .putExtra("title", results.title)
                         .putExtra("desc", results.desc)
                         .putExtra("city", results.city)
@@ -79,7 +79,6 @@ class DestinasiFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                destinasiAdapter.filterData(newText ?: "")
                 return true
             }
         })

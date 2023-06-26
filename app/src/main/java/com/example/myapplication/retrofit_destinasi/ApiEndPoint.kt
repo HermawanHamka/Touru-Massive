@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiEndPoint {
 
-    @GET("Destination")
+    @GET("destination/")
     fun getData(): Call<DestinasiModel>
 
 }

@@ -11,7 +11,6 @@ import android.widget.ProgressBar
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.adapter.HomestayAdapter
 import com.example.myapplication.adapter.TourguideAdapter
 import com.example.myapplication.model.*
 import retrofit2.Call
@@ -64,7 +63,7 @@ class TourguideActivity : AppCompatActivity() {
                             .putExtra("location_tour", results.city)
                             .putExtra("desc_tour", results.desc)
                             .putExtra("lang_tour", results.language)
-                            .putExtra("photo_tour", "http://192.168.0.103:3000${results.photo_tour}")
+                            .putExtra("photo_tour", "http://192.168.0.103:4000/images/${results.photo_tour}")
                     )
                 }
             })

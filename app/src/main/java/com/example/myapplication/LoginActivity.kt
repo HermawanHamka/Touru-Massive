@@ -32,7 +32,6 @@ class LoginActivity : AppCompatActivity() {
         val login = findViewById<Button>(R.id.btnMasukHome)
         val editEmail = findViewById<EditText>(R.id.editEmailLogin)
         val editPass = findViewById<EditText>(R.id.editPassLogin)
-        val dummy = findViewById<Button>(R.id.btnDummy)
 
         //pindah activity
         lupaSandi.setOnClickListener {
@@ -46,15 +45,6 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener {
             login(editEmail,editPass)
         }
-//        dummy.setOnClickListener {
-//            editEmail.setText("kminchelle")
-//            editPass.setText("0lelplR")
-//        }
-        dummy.setOnClickListener {
-            editEmail.setText("dito@gmail.com")
-            editPass.setText("dito123")
-        }
-
     }
 
     override fun onStart() {

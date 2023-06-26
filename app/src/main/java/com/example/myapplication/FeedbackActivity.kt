@@ -26,11 +26,11 @@ class FeedbackActivity : AppCompatActivity() {
         ratingBar.setOnRatingBarChangeListener { rBar, rating, userRating ->
             ratingScale.text = rating.toString()
             when (rBar.rating.toInt()){
-                1 -> ratingScale.text="Very Bad"
-                2 -> ratingScale.text="Bad"
-                3 -> ratingScale.text="Good"
-                4 -> ratingScale.text="Very Good"
-                5 -> ratingScale.text="Awesome"
+                1 -> ratingScale.text="Sangat Buruk"
+                2 -> ratingScale.text="Buruk"
+                3 -> ratingScale.text="Baik"
+                4 -> ratingScale.text="Sangat Baik"
+                5 -> ratingScale.text="Luar Biasa"
                 else -> ratingScale.text= " "
             }
         }

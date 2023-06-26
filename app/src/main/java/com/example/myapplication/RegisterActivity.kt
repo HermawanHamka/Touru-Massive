@@ -42,17 +42,8 @@ class RegisterActivity : AppCompatActivity() {
         val nameRegister = findViewById<EditText>(R.id.editUsernameRegister)
         val tanggalRegister = findViewById<EditText>(R.id.editTanggalLahir)
         val noRegister = findViewById<EditText>(R.id.editNomorRegister)
-        val dummy = findViewById<Button>(R.id.btnDummyRegister)
 
 
-        dummy.setOnClickListener {
-            emailRegister.setText("well@gmail.com")
-            passRegister.setText("well123")
-            nameRegister.setText("well")
-            tanggalRegister.setText("12/04/2002")
-            noRegister.setText("081263")
-
-        }
 //        button = findViewById(R.id.btn_ktp)
 
 

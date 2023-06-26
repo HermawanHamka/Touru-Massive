@@ -53,7 +53,7 @@ class DestinasiAdapter
 
         fun bind(data: DataDestination) {
             namaDestinasi.text = data.title
-            val url = "http://192.168.100.7:3000${data.photo}"
+            val url = "http://192.168.0.103:3000${data.photo}"
             Glide.with(itemView)
                 .load(url)
                 .placeholder(R.drawable.grey_background)

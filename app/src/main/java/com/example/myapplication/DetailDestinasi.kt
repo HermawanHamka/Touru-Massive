@@ -14,7 +14,7 @@ class DetailDestinasi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_destinasi)
         Glide.with(this)
-            .load(intent.getStringExtra("photo"))
+            .load(intent.getStringExtra("photo_destinasi"))
             .placeholder(R.drawable.grey_background)
             .error(R.drawable.grey_background)
             .into(findViewById(R.id.img_item_fotodestinasi))

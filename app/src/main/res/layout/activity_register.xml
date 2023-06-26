@@ -251,17 +251,6 @@
                 android:textColor="@color/white"
                 android:text="Daftar" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDummyRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:textSize="10sp"
-                android:textColor="@color/white"
-                android:background="@drawable/btn_onboarding"
-                android:text="Dummy" />
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
