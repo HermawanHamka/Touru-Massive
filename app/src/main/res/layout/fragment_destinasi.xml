@@ -23,31 +23,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.035" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/searchview_backgound"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="Cari disini"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <AutoCompleteTextView
-            android:id="@+id/auto_complete_txt"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:background="@drawable/customborder"
-            android:fontFamily="@font/poppins_regular"
-            android:freezesText="true"
-            android:inputType="none"
-            android:text="Lokasi"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:ignore="HardcodedText,LabelFor" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.094" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_heroes_destinasi"
