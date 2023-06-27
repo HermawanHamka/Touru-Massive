@@ -128,7 +128,8 @@ class RegisterActivity : AppCompatActivity() {
                 if (!respon.token.isNullOrEmpty()){
                     Toast.makeText(this@RegisterActivity, "Pendaftaran Akun Berhasil", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Error:"+respon.data, Toast.LENGTH_SHORT).show()
+                    val pindah = Intent(this@RegisterActivity, LoginActivity::class.java)
+                    startActivity(pindah)
                 }
             }
 
